@@ -5,6 +5,7 @@ import javafx.animation.TranslateTransition;
 import javafx.scene.Parent;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -24,7 +25,10 @@ public class GameMenu extends Parent {
         VBox menu0 = new VBox(10);
         VBox menu1 = new VBox(10);
         VBox menu2 = new VBox(10);
-        VBox menu3 = new VBox(10);
+        HBox menu3 = new HBox(10);
+        VBox menu4 = new VBox(10);
+        VBox menu5 = new VBox(10);
+        VBox menuAllChange = new VBox(30);
 
         menu0.setTranslateX(100);
         menu0.setTranslateY(200);
@@ -35,8 +39,8 @@ public class GameMenu extends Parent {
         menu2.setTranslateX(100);
         menu2.setTranslateY(200);
 
-        menu3.setTranslateX(100);
-        menu3.setTranslateY(50);
+        menuAllChange.setTranslateX(100);
+        menuAllChange.setTranslateY(50);
 
         ImgButton unit0 = new ImgButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\unit\\Windranger.png");
         ImgButton unit1 = new ImgButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\unit\\Enchantress.png");
@@ -48,15 +52,16 @@ public class GameMenu extends Parent {
 
         menu1.setTranslateX(offset);
         menu2.setTranslateX(offset);
+        menuAllChange.setTranslateX(offset);
 
         MenuButton btnStart = new MenuButton("START");
         btnStart.setOnMouseClicked( event -> {
-            getChildren().add(menu3);
+            getChildren().add(menuAllChange);
 
             TranslateTransition tt = new TranslateTransition(Duration.seconds(0.25), menu0);
             tt.setToX(menu0.getTranslateX() - offset);
 
-            TranslateTransition tt1 = new TranslateTransition(Duration.seconds(0.5), menu3);
+            TranslateTransition tt1 = new TranslateTransition(Duration.seconds(0.5), menuAllChange);
             tt1.setToX(menu0.getTranslateX());
 
             tt.play();
@@ -150,10 +155,39 @@ public class GameMenu extends Parent {
 
         MenuButton btnAboutGame = new MenuButton("ABOUT GAME");
 
+        MenuButton btnBackSelect = new MenuButton("BACK");
+        btnBackSelect.setOnMouseClicked( event -> {
+            getChildren().add(menu0);
+
+            TranslateTransition tt = new TranslateTransition(Duration.seconds(0.25), menuAllChange);
+            tt.setToX(menuAllChange.getTranslateX() + offset);
+
+            TranslateTransition tt1 = new TranslateTransition(Duration.seconds(0.5), menu0);
+            tt1.setToX(menuAllChange.getTranslateX());
+
+            tt.play();
+            tt1.play();
+
+            tt.setOnFinished(evt -> {
+                getChildren().remove(menuAllChange);
+            });
+        });
+
+        YouGold yg = new YouGold("30");
+
+        MenuButton btnDelete = new MenuButton("DELETE");
+        MenuButton btnExitChange = new MenuButton("EXIT");
+        btnExitChange.setOnMouseClicked(event -> {
+            System.exit(0);
+        });
+
         menu0.getChildren().addAll(btnStart, btnOptions, btnInformation, btnExit);
         menu1.getChildren().addAll(btnBack, btnLevel1, btnLevel2);
         menu2.getChildren().addAll(btnBackInf, btnAboutGame);
         menu3.getChildren().addAll(unit0, unit1, unit2, unit3, unit4);
+        menu4.getChildren().addAll(btnBackSelect);
+        menu5.getChildren().addAll(btnDelete, btnExitChange);
+        menuAllChange.getChildren().addAll(menu3, yg, menu4, menu5);
 
         Rectangle bg = new Rectangle(960, 560);
         bg.setFill(Color.GREY);

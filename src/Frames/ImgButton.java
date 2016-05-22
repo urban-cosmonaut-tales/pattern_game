@@ -39,13 +39,13 @@ public class ImgButton extends StackPane {
         getChildren().addAll(bg,imgView);
 
         setOnMouseEntered(event -> {
-            bg.setTranslateX(10);
-            imgView.setTranslateX(10);
+            bg.setTranslateY(10);
+            imgView.setTranslateY(10);
             bg.setFill(Color.WHITE);
         });
         setOnMouseExited(event -> {
-            bg.setTranslateX(0);
-            imgView.setTranslateX(0);
+            bg.setTranslateY(0);
+            imgView.setTranslateY(0);
             bg.setFill(Color.BLACK);
         });
 
