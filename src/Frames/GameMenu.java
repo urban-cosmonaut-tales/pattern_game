@@ -3,19 +3,28 @@ package Frames;
 import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
 import javafx.scene.Parent;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
+import javax.swing.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 /**
  * Created by Дарья on 22.05.2016.
  */
 public class GameMenu extends Parent {
-    public GameMenu() {
+    public GameMenu() throws IOException {
         VBox menu0 = new VBox(10);
         VBox menu1 = new VBox(10);
         VBox menu2 = new VBox(10);
+        VBox menu3 = new VBox(10);
 
         menu0.setTranslateX(100);
         menu0.setTranslateY(200);
@@ -26,6 +35,21 @@ public class GameMenu extends Parent {
         menu2.setTranslateX(100);
         menu2.setTranslateY(200);
 
+        menu3.setTranslateX(100);
+        menu3.setTranslateY(50);
+
+        //InputStream is = Files.newInputStream(Paths.get("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\unit\\Windrander"));
+        ImgButton unit0 = new ImgButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\unit\\Windranger.png");
+        ImgButton unit1 = new ImgButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\unit\\Enchantress.png");
+        ImgButton unit2 = new ImgButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\unit\\Omniknight.png");
+        ImgButton unit3 = new ImgButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\unit\\Techies.png");
+        ImgButton unit4 = new ImgButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\unit\\Timbersaw.png");
+
+        //InputStream is1 = Files.newInputStream(Paths.get("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\unit\\Enchantress.png"));
+        //InputStream is2 = Files.newInputStream(Paths.get("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\unit\\Omniknight.png"));
+        //InputStream is3 = Files.newInputStream(Paths.get("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\unit\\Techies.png"));
+        //InputStream is4 = Files.newInputStream(Paths.get("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\unit\\Timbersaw.png"));
+
         final int offset = 400;
 
         menu1.setTranslateX(offset);
@@ -33,11 +57,21 @@ public class GameMenu extends Parent {
 
         MenuButton btnStart = new MenuButton("START");
         btnStart.setOnMouseClicked( event -> {
-            FadeTransition ft = new FadeTransition(Duration.seconds(0.5), this);
-            ft.setFromValue(1);
-            ft.setToValue(0);
-            ft.setOnFinished(evt -> this.setVisible(false));
-            ft.play();
+            getChildren().add(menu3);
+
+            TranslateTransition tt = new TranslateTransition(Duration.seconds(0.25), menu0);
+            tt.setToX(menu0.getTranslateX() - offset);
+
+            TranslateTransition tt1 = new TranslateTransition(Duration.seconds(0.5), menu3);
+            tt1.setToX(menu0.getTranslateX());
+
+            tt.play();
+            tt1.play();
+
+            tt.setOnFinished(evt -> {
+                getChildren().remove(menu0);
+            });
+
         });
 
         MenuButton btnOptions = new MenuButton("OPTIONS");
@@ -125,6 +159,7 @@ public class GameMenu extends Parent {
         menu0.getChildren().addAll(btnStart, btnOptions, btnInformation, btnExit);
         menu1.getChildren().addAll(btnBack, btnLevel1, btnLevel2);
         menu2.getChildren().addAll(btnBackInf, btnAboutGame);
+        menu3.getChildren().addAll(unit0, unit1, unit2, unit3, unit4);
 
         Rectangle bg = new Rectangle(960, 560);
         bg.setFill(Color.GREY);
