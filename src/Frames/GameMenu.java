@@ -38,17 +38,11 @@ public class GameMenu extends Parent {
         menu3.setTranslateX(100);
         menu3.setTranslateY(50);
 
-        //InputStream is = Files.newInputStream(Paths.get("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\unit\\Windrander"));
         ImgButton unit0 = new ImgButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\unit\\Windranger.png");
         ImgButton unit1 = new ImgButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\unit\\Enchantress.png");
         ImgButton unit2 = new ImgButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\unit\\Omniknight.png");
         ImgButton unit3 = new ImgButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\unit\\Techies.png");
         ImgButton unit4 = new ImgButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\unit\\Timbersaw.png");
-
-        //InputStream is1 = Files.newInputStream(Paths.get("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\unit\\Enchantress.png"));
-        //InputStream is2 = Files.newInputStream(Paths.get("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\unit\\Omniknight.png"));
-        //InputStream is3 = Files.newInputStream(Paths.get("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\unit\\Techies.png"));
-        //InputStream is4 = Files.newInputStream(Paths.get("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\unit\\Timbersaw.png"));
 
         final int offset = 400;
 
