@@ -9,7 +9,7 @@ import java.awt.*;
  */
 public class DeadState extends State {
     @Override
-    public void setColor(Unit unit) {
-        unit.setColor(Color.red);
+    public Color setColor() {
+        return Color.red;
     }
 }
