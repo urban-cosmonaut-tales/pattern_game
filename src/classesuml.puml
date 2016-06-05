@@ -1,0 +1,38 @@
+@startuml
+interface Unit{
+ int strength;
+ int health;
+
+}
+Archer -|> Unit
+Berserker -|> Unit
+Healer -|> Unit
+Catapult -|> Unit
+
+class Archer{
+}
+class Berserker{
+}
+class Healer{
+}
+class Catapult{
+}
+
+Abstract class UnitFactory{
++createUnits();
+}
+class ArcherFactory{
++ createUnits();
+}
+class HealerFactory{
++ createUnits();
+}
+class BerserkerFactory{
++ createUnits();
+}
+class CatapultFactory{
++ createUnits();
+}
+
+
+@enduml

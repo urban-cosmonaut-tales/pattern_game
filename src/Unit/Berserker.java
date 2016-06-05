@@ -1,14 +1,26 @@
 package Unit;
 
+import PatternState.State;
+
 /**
  * Created by Дарья on 21.05.2016.
  */
-public class Berserker {
-    private final static int maxHP = 80;
-    private int realHP;
-    private final static int damage = 17;
+public class Berserker extends Unit{
+    private double health;
+    private double minHealth;
+    private double strength;
+    private State state;
 
-    public Berserker() {
-        realHP = maxHP;
+    public void setHealth(double _health){
+        this.health = _health;
+    }
+    public void setMinHealth(double _health){
+        this.minHealth = _health;
+    }
+    public void setStrength(double _strength){
+        this.strength = _strength;
+    }
+    public void changeState(){
+
     }
 }
