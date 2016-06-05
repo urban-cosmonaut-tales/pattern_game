@@ -13,7 +13,6 @@ public class Archer extends Unit{
     private double health;
     private double maxHealth;
     private double strength;
-    //private Color color = Color.green;
     private State state = new HealthyState();
 
     public void setHealth(double _health){
@@ -32,6 +31,9 @@ public class Archer extends Unit{
     }
     public double getHealth(){
         return this.health;
+    }
+    public double getStrength(){
+        return this.strength;
     }
     public void changeState(){
         double percent = (100*health)/maxHealth;
