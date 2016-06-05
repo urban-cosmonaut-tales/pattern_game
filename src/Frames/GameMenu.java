@@ -23,7 +23,7 @@ import java.nio.file.Paths;
 public class GameMenu extends Parent {
     public GameMenu() throws IOException {
         VBox menu0 = new VBox(10);
-        VBox menu1 = new VBox(10);
+        //VBox menu1 = new VBox(10);
         VBox menu2 = new VBox(10);
         HBox menu3 = new HBox(10);
         VBox menu4 = new VBox(10);
@@ -36,8 +36,8 @@ public class GameMenu extends Parent {
         menu0.setTranslateX(100);
         menu0.setTranslateY(200);
 
-        menu1.setTranslateX(100);
-        menu1.setTranslateY(200);
+        //menu1.setTranslateX(100);
+        //menu1.setTranslateY(200);
 
         menu2.setTranslateX(100);
         menu2.setTranslateY(200);
@@ -51,31 +51,26 @@ public class GameMenu extends Parent {
         menuComputerArmy.setTranslateX(400);
         menuComputerArmy.setTranslateY(50);
 
-        ImgButton unit0 = new ImgButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\unit\\Windranger.png");
-        ImgButton unit1 = new ImgButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\unit\\Enchantress.png");
-        ImgButton unit2 = new ImgButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\unit\\Omniknight.png");
-        ImgButton unit3 = new ImgButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\unit\\Techies.png");
-        ImgButton unit4 = new ImgButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\unit\\Timbersaw.png");
+        ImgButton unit0 = new ImgButton("C:\\lab_pps\\pattern_game\\src\\Image\\unit\\Sven.png");
+        ImgButton unit1 = new ImgButton("C:\\lab_pps\\pattern_game\\src\\Image\\unit\\Enchantress.png");
+        ImgButton unit2 = new ImgButton("C:\\lab_pps\\pattern_game\\src\\Image\\unit\\icon (1).jpg");
+        ImgButton unit3 = new ImgButton("C:\\lab_pps\\pattern_game\\src\\Image\\unit\\icon (3).jpg");
+        ImgButton unit4 = new ImgButton("C:\\lab_pps\\pattern_game\\src\\Image\\unit\\Keeper-of-the-Light.jpg");
 
-        FightButton fUnit0 = new FightButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Tantsuyut-vse.jpg");
-        FightButton fUnit1 = new FightButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Tantsuyut-vse.jpg");
-        FightButton fUnit2 = new FightButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Tantsuyut-vse.jpg");
-        FightButton fUnit3 = new FightButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Tantsuyut-vse.jpg");
-        FightButton fUnit4 = new FightButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Tantsuyut-vse.jpg");
-        FightButton fUnit5 = new FightButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Tantsuyut-vse.jpg");
-        FightButton fUnit6 = new FightButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Tantsuyut-vse.jpg");
-        FightButton fUnit7 = new FightButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Tantsuyut-vse.jpg");
-        FightButton fUnit8 = new FightButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Tantsuyut-vse.jpg");
-        FightButton fUnit9 = new FightButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Tantsuyut-vse.jpg");
-        FightButton fUnit10 = new FightButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Tantsuyut-vse.jpg");
-        FightButton fUnit11 = new FightButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Tantsuyut-vse.jpg");
-        FightButton fUnit12 = new FightButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Tantsuyut-vse.jpg");
-        FightButton fUnit13 = new FightButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Tantsuyut-vse.jpg");
-        FightButton fUnit14 = new FightButton("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Tantsuyut-vse.jpg");
+        FightButton fUnit0 = new FightButton("C:\\lab_pps\\pattern_game\\src\\Image\\unit\\wisp.jpg");
+        FightButton fUnit1 = new FightButton("C:\\lab_pps\\pattern_game\\src\\Image\\unit\\wisp.jpg");
+        FightButton fUnit2 = new FightButton("C:\\lab_pps\\pattern_game\\src\\Image\\unit\\wisp.jpg");
+        FightButton fUnit3 = new FightButton("C:\\lab_pps\\pattern_game\\src\\Image\\unit\\wisp.jpg");
+        FightButton fUnit4 = new FightButton("C:\\lab_pps\\pattern_game\\src\\Image\\unit\\wisp.jpg");
+        FightButton fUnit5 = new FightButton("C:\\lab_pps\\pattern_game\\src\\Image\\unit\\wisp.jpg");
+        FightButton fUnit6 = new FightButton("C:\\lab_pps\\pattern_game\\src\\Image\\unit\\wisp.jpg");
+        FightButton fUnit7 = new FightButton("C:\\lab_pps\\pattern_game\\src\\Image\\unit\\wisp.jpg");
+        FightButton fUnit8 = new FightButton("C:\\lab_pps\\pattern_game\\src\\Image\\unit\\wisp.jpg");
+        FightButton fUnit9 = new FightButton("C:\\lab_pps\\pattern_game\\src\\Image\\unit\\wisp.jpg");
 
         final int offset = 400;
 
-        menu1.setTranslateX(offset);
+        //menu1.setTranslateX(offset);
         menu2.setTranslateX(offset);
         menuAllChange.setTranslateX(offset);
         menuGame.setTranslateX(offset);
@@ -99,7 +94,7 @@ public class GameMenu extends Parent {
 
         });
 
-        MenuButton btnOptions = new MenuButton("OPTIONS");
+        /*MenuButton btnOptions = new MenuButton("OPTIONS");
         btnOptions.setOnMouseClicked( event -> {
             getChildren().add(menu1);
 
@@ -115,7 +110,7 @@ public class GameMenu extends Parent {
             tt.setOnFinished(evt -> {
                 getChildren().remove(menu0);
             });
-        });
+        });*/
 
         MenuButton btnInformation = new MenuButton("INFORMATION");
         btnInformation.setOnMouseClicked( event -> {
@@ -140,7 +135,7 @@ public class GameMenu extends Parent {
             System.exit(0);
         });
 
-        MenuButton btnBack = new MenuButton("BACK");
+        /*MenuButton btnBack = new MenuButton("BACK");
         btnBack.setOnMouseClicked( event -> {
             getChildren().add(menu0);
 
@@ -159,7 +154,7 @@ public class GameMenu extends Parent {
         });
 
         MenuButton btnLevel1 = new MenuButton("LEVEL 1");
-        MenuButton btnLevel2 = new MenuButton("LEVEL 2");
+        MenuButton btnLevel2 = new MenuButton("LEVEL 2");*/
 
         MenuButton btnBackInf = new MenuButton("BACK");
         btnBackInf.setOnMouseClicked( event -> {
@@ -199,9 +194,9 @@ public class GameMenu extends Parent {
             });
         });
 
-        YouGold yg = new YouGold("30");
+        //YouGold yg = new YouGold("30");
 
-        MenuButton btnDelete = new MenuButton("DELETE UNIT");
+        //MenuButton btnDelete = new MenuButton("DELETE UNIT");
         MenuButton btnStartGame = new MenuButton("START GAME");
         btnStartGame.setOnMouseClicked( event -> {
             getChildren().add(menuGame);
@@ -243,17 +238,17 @@ public class GameMenu extends Parent {
             });
         });
 
-        menu0.getChildren().addAll(btnStart, btnOptions, btnInformation, btnExit);
-        menu1.getChildren().addAll(btnBack, btnLevel1, btnLevel2);
+        menu0.getChildren().addAll(btnStart, /*btnOptions,*/ btnInformation, btnExit);
+        //menu1.getChildren().addAll(btnBack, btnLevel1, btnLevel2);
         menu2.getChildren().addAll(btnBackInf, btnAboutGame);
 
         menu3.getChildren().addAll(unit0, unit1, unit2, unit3, unit4);
         menu4.getChildren().addAll(btnBackSelect);
-        menu5.getChildren().addAll(btnDelete, btnStartGame);
-        menuAllChange.getChildren().addAll(menu3, yg, menu4, menu5);
+        menu5.getChildren().addAll(/*btnDelete,*/ btnStartGame);
+        menuAllChange.getChildren().addAll(menu3, /*yg,*/ menu4, menu5);
 
-        menuMyArmy.getChildren().addAll(fUnit0, fUnit1, fUnit2, fUnit3, fUnit4, fUnit5, fUnit6, btnFight);
-        menuComputerArmy.getChildren().addAll(fUnit7, fUnit8, fUnit9, fUnit10, fUnit11, fUnit12, fUnit13, btnExitGame);
+        menuMyArmy.getChildren().addAll(fUnit0, fUnit1, fUnit2, fUnit3, fUnit4, btnFight);
+        menuComputerArmy.getChildren().addAll(fUnit5, fUnit6, fUnit7, fUnit8, fUnit9, btnExitGame);
         menuGame.getChildren().addAll(menuMyArmy, menuComputerArmy);
 
         Rectangle bg = new Rectangle(960, 560);

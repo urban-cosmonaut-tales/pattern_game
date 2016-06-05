@@ -1,0 +1,37 @@
+@startuml
+
+abstract class Unit{
+}
+
+class Archer{
+}
+class Healer{
+}
+
+class Catapult{
+}
+Archer -|> Unit
+Unit <|- Healer
+class Berserker{
+}
+
+Unit <|- Berserker
+
+abstract class Factory{
++createUnit() : Unit;
+}
+
+class ArcherFactory{
++createUnit() : Unit;
+}
+class HealerFactory{
++createUnit() : Unit;
+}
+class BerserkerFactory{
++createUnit() : Unit;
+}
+class CatapultFactory{
++createUnit() : Unit;
+}
+
+@enduml
