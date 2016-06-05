@@ -1,14 +1,26 @@
 package Unit;
 
+import PatternState.State;
+
 /**
  * Created by Дарья on 21.05.2016.
  */
-public class Healer {
-    private final static int maxHP = 50;
-    private int realHP;
-    private final static int healSkill = 10;
+public class Healer extends Unit{
+    private double health;
+    private double minHealth;
+    private double strength;
+    private State state;
 
-    public Healer() {
-        realHP = maxHP;
+    public void setHealth(double _health){
+        this.health = _health;
+    }
+    public void setMinHealth(double _health){
+        this.minHealth = _health;
+    }
+    public void setStrength(double _strength){
+        this.strength = _strength;
+    }
+    public void changeState(){
+
     }
 }
