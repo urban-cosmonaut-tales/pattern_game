@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="818af77f-2fda-441d-a1f6-257fd39983d1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PatternBuilder/BerserkerBuilder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PatternBuilder/CatapultaBuilder.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/PatternBuilder/WarriorBuilder.java" afterPath="$PROJECT_DIR$/src/PatternBuilder/ArcherBuilder.java" />
+    <list default="true" id="818af77f-2fda-441d-a1f6-257fd39983d1" name="Default" comment="паттерн строитель">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PatternBuilder/HealerBuilder.java" afterPath="$PROJECT_DIR$/src/PatternBuilder/HealerBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Unit/Archer.java" afterPath="$PROJECT_DIR$/src/Unit/Archer.java" />
     </list>
     <ignored path="pattern_game.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,8 +44,8 @@
       <file leaf-file-name="CatapultaBuilder.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PatternBuilder/CatapultaBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+            <state relative-caret-position="119">
+              <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
               <folding>
                 <element signature="e#262#263#0" expanded="true" />
                 <element signature="e#297#298#0" expanded="true" />
@@ -802,7 +796,7 @@
       <workItem from="1464021306000" duration="1539000" />
       <workItem from="1464038074905" duration="17000" />
       <workItem from="1464086933219" duration="1913000" />
-      <workItem from="1465134742865" duration="15152000" />
+      <workItem from="1465134742865" duration="15239000" />
     </task>
     <task id="LOCAL-00001" summary="Реализован паттерн фабрика">
       <created>1465143599748</created>
@@ -825,15 +819,22 @@
       <option name="project" value="LOCAL" />
       <updated>1465154957202</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="паттерн строитель">
+      <created>1465159409810</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1465159409810</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18621000" />
+    <option name="totallyTimeSpent" value="18708000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924962" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -843,7 +844,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.315" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3137255" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33724833" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -878,7 +879,8 @@
     <MESSAGE value="Реализован паттерн фабрика" />
     <MESSAGE value="реализация паттерна состояние&#10;как только меняется состояние у персонажа меняется цвет" />
     <MESSAGE value="поправки в паттрене состояние" />
-    <option name="LAST_COMMIT_MESSAGE" value="поправки в паттрене состояние" />
+    <MESSAGE value="паттерн строитель" />
+    <option name="LAST_COMMIT_MESSAGE" value="паттерн строитель" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1266,8 +1268,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PatternBuilder/CatapultaBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+        <state relative-caret-position="119">
+          <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
           <folding>
             <element signature="e#262#263#0" expanded="true" />
             <element signature="e#297#298#0" expanded="true" />
