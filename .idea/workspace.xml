@@ -2,48 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60760a97-17b9-46a6-8251-7450e0b4b181" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Unit/Main.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/pattern_game/PatternBuilder/WarriorBuilder.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/pattern_game/PatternFacad/Level1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/pattern_game/PatternFacad/Level2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/pattern_game/PatternFacad/Level3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/pattern_game/PatternFactory/KamikazeFactory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/pattern_game/PatternIterator/ComputerArmyIterator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/pattern_game/PatternIterator/MyArmyIterator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/pattern_game/Unit/Kamikaze.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PatternFactory/KamikazeFactory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Unit/Kamikaze.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pattern_game/Frames/GameMenu.class" afterPath="$PROJECT_DIR$/out/production/pattern_game/Frames/GameMenu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pattern_game/Frames/PrimaryFrame.class" afterPath="$PROJECT_DIR$/out/production/pattern_game/Frames/PrimaryFrame.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pattern_game/PatternBuilder/HealerBuilder.class" afterPath="$PROJECT_DIR$/out/production/pattern_game/PatternBuilder/HealerBuilder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pattern_game/PatternBuilder/UnitBuilder.class" afterPath="$PROJECT_DIR$/out/production/pattern_game/PatternBuilder/UnitBuilder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pattern_game/PatternFactory/ArcherFactory.class" afterPath="$PROJECT_DIR$/out/production/pattern_game/PatternFactory/ArcherFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pattern_game/PatternFactory/BerserkerFactory.class" afterPath="$PROJECT_DIR$/out/production/pattern_game/PatternFactory/BerserkerFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pattern_game/PatternFactory/CatapultFactory.class" afterPath="$PROJECT_DIR$/out/production/pattern_game/PatternFactory/CatapultFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pattern_game/PatternFactory/Factory.class" afterPath="$PROJECT_DIR$/out/production/pattern_game/PatternFactory/Factory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pattern_game/PatternState/DamagedState.class" afterPath="$PROJECT_DIR$/out/production/pattern_game/PatternState/DamagedState.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pattern_game/PatternState/DeadState.class" afterPath="$PROJECT_DIR$/out/production/pattern_game/PatternState/DeadState.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pattern_game/PatternState/HealthyState.class" afterPath="$PROJECT_DIR$/out/production/pattern_game/PatternState/HealthyState.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pattern_game/PatternState/State.class" afterPath="$PROJECT_DIR$/out/production/pattern_game/PatternState/State.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pattern_game/Unit/Archer.class" afterPath="$PROJECT_DIR$/out/production/pattern_game/Unit/Archer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pattern_game/Unit/Berserker.class" afterPath="$PROJECT_DIR$/out/production/pattern_game/Unit/Berserker.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pattern_game/Unit/Catapult.class" afterPath="$PROJECT_DIR$/out/production/pattern_game/Unit/Catapult.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pattern_game/Unit/Healer.class" afterPath="$PROJECT_DIR$/out/production/pattern_game/Unit/Healer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pattern_game.iml" afterPath="$PROJECT_DIR$/pattern_game.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Army/ComputerArmy.java" afterPath="$PROJECT_DIR$/src/Army/ComputerArmy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Army/MyArmy.java" afterPath="$PROJECT_DIR$/src/Army/MyArmy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PatternBuilder/ArcherBuilder.java" afterPath="$PROJECT_DIR$/src/PatternBuilder/ArcherBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PatternBuilder/BerserkerBuilder.java" afterPath="$PROJECT_DIR$/src/PatternBuilder/BerserkerBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PatternBuilder/CatapultaBuilder.java" afterPath="$PROJECT_DIR$/src/PatternBuilder/CatapultaBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PatternBuilder/HealerBuilder.java" afterPath="$PROJECT_DIR$/src/PatternBuilder/HealerBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PatternBuilder/UnitBuilder.java" afterPath="$PROJECT_DIR$/src/PatternBuilder/UnitBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Unit/Archer.java" afterPath="$PROJECT_DIR$/src/Unit/Archer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Unit/Berserker.java" afterPath="$PROJECT_DIR$/src/Unit/Berserker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Unit/Catapult.java" afterPath="$PROJECT_DIR$/src/Unit/Catapult.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Unit/Healer.java" afterPath="$PROJECT_DIR$/src/Unit/Healer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Unit/Unit.java" afterPath="$PROJECT_DIR$/src/Unit/Unit.java" />
     </list>
     <ignored path="pattern_game.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -140,8 +99,8 @@
       <file leaf-file-name="BerserkerBuilder.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PatternBuilder/BerserkerBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+            <state relative-caret-position="266">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -871,12 +830,20 @@
       <workItem from="1465160554955" duration="147000" />
       <workItem from="1465232264620" duration="54000" />
       <workItem from="1465232364573" duration="5735000" />
-      <workItem from="1465242062643" duration="10457000" />
+      <workItem from="1465242062643" duration="10875000" />
     </task>
+    <task id="LOCAL-00001" summary="сделана генерация армии компьютера&#10;доработыны методы атаки&#10;паттерн синглтон на армии компютера и игрока">
+      <created>1465254859937</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1465254859937</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16585000" />
+    <option name="totallyTimeSpent" value="17003000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
@@ -890,8 +857,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32626426" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30392158" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -921,6 +888,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="сделана генерация армии компьютера&#10;доработыны методы атаки&#10;паттерн синглтон на армии компютера и игрока" />
+    <option name="LAST_COMMIT_MESSAGE" value="сделана генерация армии компьютера&#10;доработыны методы атаки&#10;паттерн синглтон на армии компютера и игрока" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <option name="time" value="2" />
@@ -937,11 +908,11 @@
         <state relative-caret-position="425">
           <caret line="25" column="47" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#529#530#0" expanded="true" />
-            <element signature="e#554#555#0" expanded="true" />
-            <element signature="e#581#582#0" expanded="true" />
-            <element signature="e#609#610#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#529#530#0" expanded="false" />
+            <element signature="e#554#555#0" expanded="false" />
+            <element signature="e#581#582#0" expanded="false" />
+            <element signature="e#609#610#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1029,11 +1000,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#529#530#0" expanded="true" />
-            <element signature="e#554#555#0" expanded="true" />
-            <element signature="e#581#582#0" expanded="true" />
-            <element signature="e#609#610#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#529#530#0" expanded="false" />
+            <element signature="e#554#555#0" expanded="false" />
+            <element signature="e#581#582#0" expanded="false" />
+            <element signature="e#609#610#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1043,11 +1014,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#529#530#0" expanded="true" />
-            <element signature="e#554#555#0" expanded="true" />
-            <element signature="e#581#582#0" expanded="true" />
-            <element signature="e#609#610#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#529#530#0" expanded="false" />
+            <element signature="e#554#555#0" expanded="false" />
+            <element signature="e#581#582#0" expanded="false" />
+            <element signature="e#609#610#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1094,8 +1065,8 @@
         <state relative-caret-position="288">
           <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
           <folding>
-            <element signature="e#179#180#0" expanded="true" />
-            <element signature="e#207#208#0" expanded="true" />
+            <element signature="e#179#180#0" expanded="false" />
+            <element signature="e#207#208#0" expanded="false" />
             <element signature="method#build#0;class#UnitBuilder#0" expanded="false" />
           </folding>
         </state>
@@ -1106,11 +1077,11 @@
         <state relative-caret-position="297">
           <caret line="50" column="30" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#529#530#0" expanded="true" />
-            <element signature="e#554#555#0" expanded="true" />
-            <element signature="e#581#582#0" expanded="true" />
-            <element signature="e#609#610#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#529#530#0" expanded="false" />
+            <element signature="e#554#555#0" expanded="false" />
+            <element signature="e#581#582#0" expanded="false" />
+            <element signature="e#609#610#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1212,8 +1183,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PatternBuilder/BerserkerBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+        <state relative-caret-position="266">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
