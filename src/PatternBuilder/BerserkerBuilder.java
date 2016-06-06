@@ -1,18 +1,22 @@
 package PatternBuilder;
 
+import Unit.Unit;
+
 /**
  * Created by Евгения on 05.06.2016.
  */
 public class BerserkerBuilder extends UnitBuilder{
     private int index;
-    private final double health = 40;
-    private final double strength = -10;
-    public BerserkerBuilder(int _index){
-        this.index = _index;
+    private final int health = 30;
+    private final int strength = 10;
+    public BerserkerBuilder( Unit _unit, int _index){
+        super(_unit);
+        unit.setIndex(_index);
+        index = _index;
     }
     @Override
     public void buildHealth() {
-        unit.setHealth(health-(index*3));
+        unit.setHealth(health-(index*4));
     }
 
     @Override
@@ -22,6 +26,6 @@ public class BerserkerBuilder extends UnitBuilder{
 
     @Override
     public void buildStrength() {
-        unit.setStrength(strength + (index));
+        unit.setStrength(strength + (index*3));
     }
 }

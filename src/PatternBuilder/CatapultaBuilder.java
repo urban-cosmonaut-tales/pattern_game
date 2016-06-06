@@ -1,14 +1,18 @@
 package PatternBuilder;
 
+import Unit.Unit;
+
 /**
  * Created by Евгения on 05.06.2016.
  */
 public class CatapultaBuilder extends UnitBuilder{
     private int index;
-    private final double health = 40;
-    private final double strength = -10;
-    public CatapultaBuilder(int _index){
+    private final int health = 40;
+    private final int strength = 10;
+    public CatapultaBuilder(Unit _unit, int _index){
+        super(_unit);
         this.index = _index;
+        unit.setIndex(_index);
     }
     @Override
     public void buildHealth() {
@@ -22,6 +26,6 @@ public class CatapultaBuilder extends UnitBuilder{
 
     @Override
     public void buildStrength() {
-        unit.setStrength(strength + (index));
+        unit.setStrength(strength + (index*3));
     }
 }

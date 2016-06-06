@@ -2,25 +2,26 @@ package Unit;
 
 import PatternState.State;
 
+import java.awt.*;
+
+import static java.lang.Math.abs;
+
 /**
  * Created by Дарья on 21.05.2016.
  */
 public class Healer extends Unit{
-    private double health;
-    private double minHealth;
-    private double strength;
-    private State state;
-
-    public void setHealth(double _health){
-        this.health = _health;
+    public Healer(){
+        maxHealth = 30;
     }
-    public void setMinHealth(double _health){
-        this.minHealth = _health;
-    }
-    public void setStrength(double _strength){
-        this.strength = _strength;
-    }
-    public void changeState(){
-
+    @Override
+    public void doAction(Unit[] enemy) {
+        int count = enemy.length;
+        int str = strength;
+        for(int i = 0; i < enemy.length; i++){
+            int damage = str/count--;
+            int health = enemy[i].getHealth() + damage;
+            enemy[i].setHealth(health);
+            str = str - damage;
+        }
     }
 }
