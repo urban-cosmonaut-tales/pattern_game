@@ -7,6 +7,9 @@ import Unit.*;
  */
 public abstract class UnitBuilder {
     protected Unit unit;
+    public UnitBuilder(Unit _unit){
+        unit = _unit;
+    }
     public Unit getUnit(){
         return unit;
     }
@@ -16,4 +19,8 @@ public abstract class UnitBuilder {
     public abstract void buildHealth();
     public abstract void buildStrength();
     public abstract void buildMaxHealth();
+    public void build(){
+        buildStrength();
+        buildHealth();
+    }
 }

@@ -1,14 +1,18 @@
 package PatternBuilder;
 
+import Unit.*;
+
 /**
  * Created by Дарья on 21.05.2016.
  */
 public class ArcherBuilder extends UnitBuilder {
     private int index;
-    private final double health = 40;
-    private final double strength = -10;
-    public ArcherBuilder(int _index){
-        this.index = _index;
+    private final int health = 40;
+    private final int strength = 10;
+    public ArcherBuilder(Unit _unit, int _index){
+        super(_unit);
+        unit.setIndex(_index);
+        index = _index;
     }
     @Override
     public void buildHealth() {
@@ -22,6 +26,7 @@ public class ArcherBuilder extends UnitBuilder {
 
     @Override
     public void buildStrength() {
-        unit.setStrength(strength + (index));
+        unit.setStrength(strength + (index*3));
     }
+
 }
