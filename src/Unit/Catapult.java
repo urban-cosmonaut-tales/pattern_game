@@ -2,25 +2,19 @@ package Unit;
 
 import PatternState.State;
 
+import java.awt.*;
+
 /**
  * Created by Дарья on 21.05.2016.
  */
 public class Catapult extends Unit{
-    private double health;
-    private double minHealth;
-    private double strength;
-    private State state;
 
-    public void setHealth(double _health){
-        this.health = _health;
+    public Catapult(){
+        maxHealth = 40;
     }
-    public void setMinHealth(double _health){
-        this.minHealth = _health;
-    }
-    public void setStrength(double _strength){
-        this.strength = _strength;
-    }
-    public void changeState(){
-
+    @Override
+    public void doAction(Unit[] unit) {
+        int damage = unit[0].getHealth() - strength;
+        unit[0].setHealth(damage);
     }
 }
