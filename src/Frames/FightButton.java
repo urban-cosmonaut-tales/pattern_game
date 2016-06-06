@@ -25,8 +25,8 @@ public class FightButton extends StackPane {
         Image img = new Image(is);
         is.close();
         ImageView imgView = new ImageView(img);
-        imgView.setFitWidth(80);
-        imgView.setFitHeight(45);
+        imgView.setFitWidth(160);
+        imgView.setFitHeight(90);
 
         Rectangle bg = new Rectangle(80, 45);
         bg.setOpacity(0.6);
