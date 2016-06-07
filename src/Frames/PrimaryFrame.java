@@ -29,9 +29,9 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-
+// Основной класс, откуда загружается весь фрейм
 public class PrimaryFrame extends Application {
-    private GameMenu gameMenu;
+    private GameMenu gameMenu; // создание объекта, в котором описаны все меню
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -53,7 +53,7 @@ public class PrimaryFrame extends Application {
         root.getChildren().addAll(imgView, gameMenu);
 
         Scene scene = new Scene(root);
-        scene.setOnKeyPressed( event -> {
+        scene.setOnKeyPressed( event -> { // окошко открывается по нажатию клавиши esc
            if (event.getCode() == KeyCode.ESCAPE) {
                if (!gameMenu.isVisible()) {
                    FadeTransition ft = new FadeTransition(Duration.seconds(0.5), gameMenu);

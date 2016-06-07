@@ -10,6 +10,7 @@ import javafx.scene.text.Text;
 /**
  * Created by Дарья on 06.06.2016.
  */
+// класс отвечающий за отображение имени класса
 public class ClassName extends StackPane {
     private Text text;
 
