@@ -13,10 +13,10 @@ import javafx.scene.text.Text;
 public class ClassName extends StackPane {
     private Text text;
 
-    public ClassName(String message) {
+    public ClassName(String message, Color name) {
         text = new Text(message);
         text.setFont(this.text.getFont().font(20));
-        text.setFill(Color.BLACK);
+        text.setFill(name);
 
         Rectangle bg = new Rectangle(150,30);
         bg.setOpacity(0.6);

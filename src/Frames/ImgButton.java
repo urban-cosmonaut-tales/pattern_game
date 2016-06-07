@@ -20,8 +20,9 @@ import java.nio.file.Paths;
  * Created by Дарья on 22.05.2016.
  */
 public class ImgButton extends StackPane {
-
+    private boolean status;
     public ImgButton(String ii) throws IOException {
+        status = false;
         InputStream is = Files.newInputStream(Paths.get(ii));
         Image img = new Image(is);
         is.close();
@@ -49,10 +50,17 @@ public class ImgButton extends StackPane {
             bg.setFill(Color.BLACK);
         });
 
-        DropShadow drop = new DropShadow(50, Color.WHITE);
+        DropShadow drop = new DropShadow(50, Color.RED);
         drop.setInput(new Glow());
 
-        setOnMousePressed(event -> setEffect(drop));
-        setOnMouseReleased(event -> setEffect(null));
+
+        setOnMousePressed(event -> {
+            if (getEffect() == null) {setEffect(drop); status = true;}
+            else {setEffect(null); status = false;}});
+        //setOnMouseReleased(event -> setEffect(null));
+    }
+    public boolean getStatus()
+    {
+        return this.status;
     }
 }
