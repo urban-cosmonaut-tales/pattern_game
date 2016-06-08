@@ -69,4 +69,8 @@ public class ImgButton extends StackPane {
     {
         return this.status;
     }
+    public void setStatus(boolean sts)
+    {
+        this.status = sts;
+    }
 }

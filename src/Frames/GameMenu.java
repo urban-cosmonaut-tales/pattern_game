@@ -7,6 +7,9 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
+
+import javax.swing.*;
+import java.awt.*;
 import java.io.IOException;
 import java.util.Random;
 
@@ -14,8 +17,10 @@ import java.util.Random;
  * Created by Дарья on 22.05.2016.
  */
 public class GameMenu extends Parent {
-    FightButton fUnit0, fUnit1, fUnit2, fUnit3, fUnit4, fUnit5, fUnit6, fUnit7; // объекты-кнопки для самой битвы.
+    FightButton[] fUnitPlayer, fUnitComp; // объекты-кнопки для самой битвы.
     boolean flag = false; // флаг для того, чтобы понять надо перезагружать армию или нет
+    int countAr, countHl, countBr, countKp; // количество выделенных персонажей
+    int numAr, numHl, numBr, numKp; // номер выделенного персонажа
     VBox menuMyArmy = new VBox(17); // меню в котором отображаются юниты армии игрока во время битвы
     VBox menuComputerArmy = new VBox(17); // меню в котором отображаются юниты армии компьютера во время битвы
     HBox menuGame = new HBox(500); // здесь лежат армия игрока, армия компьютера и необходимые кнопки меню битвы
@@ -79,28 +84,32 @@ public class GameMenu extends Parent {
 
         // создаем заголовок для каждого класса и создаем кнопки-картинки
         ClassName ar = new ClassName("Archers class", Color.DARKBLUE);
-        ImgButton unitAr0 = new ImgButton(Ar[0]);
-        ImgButton unitAr1 = new ImgButton(Ar[1]);
-        ImgButton unitAr2 = new ImgButton(Ar[2]);
-        ImgButton unitAr3 = new ImgButton(Ar[3]);
+        ImgButton[] unitAr = new ImgButton[4];
+        unitAr[0] = new ImgButton(Ar[0]);
+        unitAr[1] = new ImgButton(Ar[1]);
+        unitAr[2] = new ImgButton(Ar[2]);
+        unitAr[3] = new ImgButton(Ar[3]);
 
         ClassName hil = new ClassName("Healers class", Color.DARKGREEN);
-        ImgButton unitHil0 = new ImgButton(Hl[0]);
-        ImgButton unitHil1 = new ImgButton(Hl[1]);
-        ImgButton unitHil2 = new ImgButton(Hl[2]);
-        ImgButton unitHil3 = new ImgButton(Hl[3]);
+        ImgButton[] unitHl = new ImgButton[4];
+        unitHl[0] = new ImgButton(Hl[0]);
+        unitHl[1] = new ImgButton(Hl[1]);
+        unitHl[2] = new ImgButton(Hl[2]);
+        unitHl[3] = new ImgButton(Hl[3]);
 
         ClassName ber = new ClassName("Berserkers class", Color.DARKRED);
-        ImgButton unitBer0 = new ImgButton(Br[0]);
-        ImgButton unitBer1 = new ImgButton(Br[1]);
-        ImgButton unitBer2 = new ImgButton(Br[2]);
-        ImgButton unitBer3 = new ImgButton(Br[3]);
+        ImgButton[] unitBer = new ImgButton[4];
+        unitBer[0] = new ImgButton(Br[0]);
+        unitBer[1] = new ImgButton(Br[1]);
+        unitBer[2] = new ImgButton(Br[2]);
+        unitBer[3] = new ImgButton(Br[3]);
 
         ClassName ktp = new ClassName("Catapults class",Color.DARKGOLDENROD);
-        ImgButton unitKatp0 = new ImgButton(Kp[0]);
-        ImgButton unitKatp1 = new ImgButton(Kp[1]);
-        ImgButton unitKatp2 = new ImgButton(Kp[2]);
-        ImgButton unitKatp3 = new ImgButton(Kp[3]);
+        ImgButton[] unitKatp = new ImgButton[4];
+        unitKatp[0] = new ImgButton(Kp[0]);
+        unitKatp[1] = new ImgButton(Kp[1]);
+        unitKatp[2] = new ImgButton(Kp[2]);
+        unitKatp[3] = new ImgButton(Kp[3]);
 
 
         final int offset = 400;
@@ -225,8 +234,15 @@ public class GameMenu extends Parent {
         // кнопка начать игру
         MenuButton btnStartGame = new MenuButton("START GAME");
         btnStartGame.setOnMouseClicked( event -> {
+            if(flag==false) {
+                fUnitPlayer = new FightButton[4];
+                fUnitComp = new FightButton[4];
+                countAr=0; countHl=0; countBr=0; countKp=0;
+                numAr=-1; numHl=-1; numBr=-1; numKp=-1;
+            }
             if (flag == true) { // если армию уже создавали обнуляем все переменные необходимые для боя
-                fUnit0 = null; fUnit1 = null; fUnit2 = null; fUnit3 = null; fUnit4 = null; fUnit5 = null; fUnit6 = null; fUnit7 = null;
+                fUnitPlayer[0] = null; fUnitPlayer[1] = null; fUnitPlayer[2] = null; fUnitPlayer[3] = null;
+                fUnitComp[0] = null; fUnitComp[1] = null; fUnitComp[2] = null; fUnitComp[3] = null;
                 flag = false;
                 menuMyArmy = new VBox(17);
                 menuComputerArmy = new VBox(17);
@@ -237,34 +253,39 @@ public class GameMenu extends Parent {
                 menuGame.setTranslateX(offset);
             }
             try {
-                // если выбран лучник(0) то кнопке в меню сражение присваиваем картинку сражение
-                if (unitAr0.getStatus()== true) {
-                    fUnit0 = new FightButton(Ar[0]);
-                    // здесь создание персонажа
-                    }
-                else
-                {fUnit0 = new FightButton(nol);}
-                // если выбран целитель(0) то кнопке в меню сражение присваиваем картинку сражение
-                if (unitHil0.getStatus() == true) {
-                    fUnit1 = new FightButton(Hl[0]);
-                    // здесь создание персонажа
+                for(int i=0;i<4;i++){
+                    if(unitAr[i].getStatus()== true) {
+                        countAr++; numAr=i;
+                        unitAr[i].setEffect(null);
+                        unitAr[i].setStatus(false);
+                        }
+                    if(unitHl[i].getStatus()== true) {
+                        countHl++; numHl=i;
+                        unitHl[i].setEffect(null);
+                        unitHl[i].setStatus(false);
+                        }
+                    if(unitBer[i].getStatus()== true) {
+                        countBr++; numBr=i;
+                        unitBer[i].setEffect(null);
+                        unitBer[i].setStatus(false);
+                        }
+                    if(unitKatp[i].getStatus()== true) {
+                        countKp++; numKp=i;
+                        unitKatp[i].setEffect(null);
+                        unitKatp[i].setStatus(false);
+                        }
                 }
-                else
-                {fUnit1 = new FightButton(nol);}
-                // если выбран воин(0) то кнопке в меню сражение присваиваем картинку сражение
-                if (unitBer0.getStatus() == true) {
-                    fUnit2 = new FightButton(Br[0]);
-                    // здесь создание персонажа
+                if ((countAr != 1)||(countBr != 1) || (countHl != 1) || (countKp != 1)) {
+                    JOptionPane.showConfirmDialog(null,"!!!/nВ каждом классе должен быть выбран только один персонаж/n!!!","ERROR",JOptionPane.WARNING_MESSAGE);
+
                 }
-                else
-                {fUnit2 = new FightButton(nol);}
-                // если выбрана катапульта(0) то кнопке в меню сражение присваиваем картинку сражение
-                if (unitKatp0.getStatus() == true) {
-                    fUnit3 = new FightButton(Kp[0]);
-                    // здесь создание персонажа
-                }
-                else
-                {fUnit3 = new FightButton(nol);}
+
+                // задаем картинки выбранных персонажей персонажам в окне сражения
+                fUnitPlayer[0] = new FightButton(Ar[numAr]);
+                fUnitPlayer[1] = new FightButton(Hl[numHl]);
+                fUnitPlayer[2] = new FightButton(Br[numBr]);
+                fUnitPlayer[3] = new FightButton(Kp[numKp]);
+                // здесь передаем в билдер значение всех индексов для создания персонажей
 
                 // рандомим номер элемента массива для каждого класса
                 Random rnd = new Random();
@@ -273,18 +294,21 @@ public class GameMenu extends Parent {
                 int numBr = rnd.nextInt(4);
                 int numKp = rnd.nextInt(4);
                 // присваиваем кнопке сражения картинку в зависммости от результата рандома
-                fUnit4 = new FightButton(Ar[numAr]);
+                fUnitComp[0] = new FightButton(Ar[numAr]);
                 // здесь создание персонажа
-                fUnit5 = new FightButton(Hl[numHl]);
+                fUnitComp[1] = new FightButton(Hl[numHl]);
                 // здесь создание персонажа
-                fUnit6 = new FightButton(Br[numBr]);
+                fUnitComp[2] = new FightButton(Br[numBr]);
                 // здесь создание персонажа
-                fUnit7 = new FightButton(Kp[numKp]);
+                fUnitComp[3] = new FightButton(Kp[numKp]);
                 // здесь создание персонажа
+
+                countAr=0; countHl=0; countBr=0; countKp=0;
+                numAr=-1; numHl=-1; numBr=-1; numKp=-1;
                 if (flag == false) { // если переменные обнулены или еще ни разу не создавались
                     // заполняем меню элементами
-                    menuMyArmy.getChildren().addAll(fUnit0, fUnit1, fUnit2, fUnit3, btnFight);
-                    menuComputerArmy.getChildren().addAll(fUnit4, fUnit5, fUnit6, fUnit7, btnExitGame);
+                    menuMyArmy.getChildren().addAll(fUnitPlayer[0], fUnitPlayer[1], fUnitPlayer[2], fUnitPlayer[3], btnFight);
+                    menuComputerArmy.getChildren().addAll(fUnitComp[0], fUnitComp[1], fUnitComp[2], fUnitComp[3], btnExitGame);
                     menuGame.getChildren().addAll(menuMyArmy, menuComputerArmy);
                 }
             } catch (IOException e) {
@@ -312,10 +336,10 @@ public class GameMenu extends Parent {
         menu2.getChildren().addAll(btnBackInf, btnAboutGame);
 
         menu3.getChildren().addAll(menuAr, menuHil, menuBer, menuKatp);
-        menuAr.getChildren().addAll(ar, unitAr0, unitAr1, unitAr2, unitAr3);
-        menuHil.getChildren().addAll(hil, unitHil0, unitHil1, unitHil2, unitHil3);
-        menuBer.getChildren().addAll(ber, unitBer0, unitBer1, unitBer2, unitBer3);
-        menuKatp.getChildren().addAll(ktp, unitKatp0, unitKatp1, unitKatp2, unitKatp3);
+        menuAr.getChildren().addAll(ar, unitAr[0], unitAr[1], unitAr[2], unitAr[3]);
+        menuHil.getChildren().addAll(hil, unitHl[0], unitHl[1], unitHl[2], unitHl[3]);
+        menuBer.getChildren().addAll(ber, unitBer[0], unitBer[1], unitBer[2], unitBer[3]);
+        menuKatp.getChildren().addAll(ktp, unitKatp[0], unitKatp[1], unitKatp[2], unitKatp[3]);
         menu4.getChildren().addAll(btnBackSelect);
         menu5.getChildren().addAll(btnStartGame);
         menuAllChange.getChildren().addAll(menu3, menu4, menu5);
