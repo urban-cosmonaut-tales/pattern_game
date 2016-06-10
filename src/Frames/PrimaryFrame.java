@@ -37,15 +37,15 @@ public class PrimaryFrame extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         Pane root = new Pane();
-        root.setPrefSize(960,560);
+        root.setPrefSize(1200,700);
 
         InputStream is = Files.newInputStream(Paths.get("C:\\lab_pps\\pattern_game\\src\\Image\\Game-of-Thrones-screen.jpg"));
         Image img = new Image(is);
         is.close();
 
         ImageView imgView = new ImageView(img);
-        imgView.setFitWidth(960);
-        imgView.setFitHeight(560);
+        imgView.setFitWidth(1200);
+        imgView.setFitHeight(700);
 
         gameMenu = new GameMenu();
         gameMenu.setVisible(false);
