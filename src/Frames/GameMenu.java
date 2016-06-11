@@ -18,12 +18,17 @@ import java.util.Random;
  */
 public class GameMenu extends Parent {
     FightButton[] fUnitPlayer, fUnitComp; // объекты-кнопки для самой битвы.
+    UnitOptions[] fUnit, fComputer;
     boolean flag = false; // флаг для того, чтобы понять надо перезагружать армию или нет
     int countAr, countHl, countBr, countKp; // количество выделенных персонажей
     int numAr, numHl, numBr, numKp; // номер выделенного персонажа
     VBox menuMyArmy = new VBox(17); // меню в котором отображаются юниты армии игрока во время битвы
     VBox menuComputerArmy = new VBox(17); // меню в котором отображаются юниты армии компьютера во время битвы
-    HBox menuGame = new HBox(500); // здесь лежат армия игрока, армия компьютера и необходимые кнопки меню битвы
+    VBox opMyArmy = new VBox(17);
+    VBox opComputerArmy = new VBox(17);
+    HBox allMyArmy = new HBox(10);
+    HBox allComputerArmy = new HBox(10);
+    HBox menuGame = new HBox(350); // здесь лежат армия игрока, армия компьютера и необходимые кнопки меню битвы
     String[] Ar; // массив с путями до картинок лучников
     String[] Hl; // массив с путями до картинок целителей
     String[] Br; // массив с путями до картинок воинов
@@ -52,7 +57,7 @@ public class GameMenu extends Parent {
         menuAllChange.setTranslateX(100);
         menuAllChange.setTranslateY(100);
 
-        menuGame.setTranslateX(100);
+        menuGame.setTranslateX(70);
         menuGame.setTranslateY(100);
 
         // присваиваем массивы 4 элемента и для каждого указываем путь до картинки
@@ -214,6 +219,8 @@ public class GameMenu extends Parent {
         // внопка закончить игру
         MenuButtonShort btnExitGame = new MenuButtonShort("END GAME");
         btnExitGame.setOnMouseClicked( event -> {
+            int reply = JOptionPane.showConfirmDialog(null, "ARE YOU SURE?", "THIS IS THE END", JOptionPane.YES_NO_OPTION);
+            if (reply== JOptionPane.NO_OPTION) {return;}
             flag = true; // меняется значение флага, необходимое для обнуления массива армии игрока и армии компьютера
             getChildren().add(menu0);
 
@@ -237,18 +244,30 @@ public class GameMenu extends Parent {
             if(flag==false) {
                 fUnitPlayer = new FightButton[4];
                 fUnitComp = new FightButton[4];
+                //
+                fUnit = new UnitOptions[4];
+                fComputer = new UnitOptions[4];
+                //
                 countAr=0; countHl=0; countBr=0; countKp=0;
                 numAr=-1; numHl=-1; numBr=-1; numKp=-1;
             }
             if (flag == true) { // если армию уже создавали обнуляем все переменные необходимые для боя
                 fUnitPlayer[0] = null; fUnitPlayer[1] = null; fUnitPlayer[2] = null; fUnitPlayer[3] = null;
                 fUnitComp[0] = null; fUnitComp[1] = null; fUnitComp[2] = null; fUnitComp[3] = null;
+                //
+                fUnit[0]= null; fUnit[1]= null; fUnit[2]= null; fUnit[3]= null;
+                fComputer[0]=null; fComputer[1]=null; fComputer[2]=null; fComputer[3]=null;
+                //
                 flag = false;
                 menuMyArmy = new VBox(17);
                 menuComputerArmy = new VBox(17);
-                menuGame = new HBox(500);
+                opMyArmy = new VBox(17);
+                opComputerArmy = new VBox(17);
+                allMyArmy = new HBox(10);
+                allComputerArmy = new HBox(10);
+                menuGame = new HBox(350);
 
-                menuGame.setTranslateX(100);
+                menuGame.setTranslateX(70);
                 menuGame.setTranslateY(100);
                 menuGame.setTranslateX(offset);
             }
@@ -276,8 +295,8 @@ public class GameMenu extends Parent {
                         }
                 }
                 if ((countAr != 1)||(countBr != 1) || (countHl != 1) || (countKp != 1)) {
-                    JOptionPane.showConfirmDialog(null,"!!!/nВ каждом классе должен быть выбран только один персонаж/n!!!","ERROR",JOptionPane.WARNING_MESSAGE);
-
+                    JOptionPane.showMessageDialog(null,"\n" + "In each class, one character must be selected");
+                    return;
                 }
 
                 // задаем картинки выбранных персонажей персонажам в окне сражения
@@ -303,13 +322,32 @@ public class GameMenu extends Parent {
                 fUnitComp[3] = new FightButton(Kp[numKp]);
                 // здесь создание персонажа
 
+                //
+                fUnit[0] = new UnitOptions(40,12,Color.GREEN,false);
+                fUnit[1] = new UnitOptions(30,10,Color.GREEN,true);
+                fUnit[2] = new UnitOptions(45,15,Color.GREEN,false);
+                fUnit[3] = new UnitOptions(40,7,Color.GREEN,false);
+
+                fComputer[0] = new UnitOptions(40,12,Color.RED,false);
+                fComputer[1] = new UnitOptions(30,10,Color.RED,true);
+                fComputer[2] = new UnitOptions(45,15,Color.RED,false);
+                fComputer[3] = new UnitOptions(40,7,Color.RED,false);
+                //
+
                 countAr=0; countHl=0; countBr=0; countKp=0;
                 numAr=-1; numHl=-1; numBr=-1; numKp=-1;
                 if (flag == false) { // если переменные обнулены или еще ни разу не создавались
                     // заполняем меню элементами
                     menuMyArmy.getChildren().addAll(fUnitPlayer[0], fUnitPlayer[1], fUnitPlayer[2], fUnitPlayer[3], btnFight);
                     menuComputerArmy.getChildren().addAll(fUnitComp[0], fUnitComp[1], fUnitComp[2], fUnitComp[3], btnExitGame);
-                    menuGame.getChildren().addAll(menuMyArmy, menuComputerArmy);
+                    //
+                    opMyArmy.getChildren().addAll(fUnit[0],fUnit[1],fUnit[2],fUnit[3]);
+                    opComputerArmy.getChildren().addAll(fComputer[0],fComputer[1],fComputer[2],fComputer[3]);
+                    allMyArmy.getChildren().addAll(menuMyArmy,opMyArmy);
+                    allComputerArmy.getChildren().addAll(opComputerArmy,menuComputerArmy);
+                    menuGame.getChildren().addAll(allMyArmy, allComputerArmy);
+                    //
+                    //menuGame.getChildren().addAll(menuMyArmy, menuComputerArmy);
                 }
             } catch (IOException e) {
                 e.printStackTrace();

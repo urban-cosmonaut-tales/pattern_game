@@ -29,7 +29,7 @@ public class FightButton extends StackPane {
         imgView.setFitWidth(160);
         imgView.setFitHeight(90);
 
-        Rectangle bg = new Rectangle(80, 45);
+        Rectangle bg = new Rectangle(160, 90);
         bg.setOpacity(0.6);
         bg.setFill(Color.BLACK);
         bg.setEffect(new GaussianBlur(3.5));
