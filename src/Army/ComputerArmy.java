@@ -4,8 +4,10 @@ import PatternBuilder.*;
 import PatternFactory.*;
 import Unit.*;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.jar.Pack200;
 
 /**
  * Created by Дарья on 21.05.2016.
@@ -37,8 +39,8 @@ public class ComputerArmy {
     public void addUnit(Unit unit){
         army.add(unit);
     }
+
     public void createArmy(int archer, int berserker, int healer, int catapult){
-        int[] unitIndexes = {archer, berserker, healer, catapult};
         if(!army.isEmpty())
             army.clear();
         Factory[] factories = new Factory[]{new ArcherFactory(), new BerserkerFactory(), new HealerFactory(),
@@ -52,6 +54,59 @@ public class ComputerArmy {
         new HealerBuilder(army.get(2), healer).build();
         new CatapultaBuilder(army.get(3), catapult).build();
 
+    }
+    private ArrayList<Unit> generateEnemies(){
+        int enemyCount;
+        Random rnd = new Random();
+        ArrayList<Unit> units = new ArrayList<Unit>();
+        int pastNum = 0;
+        int presentNum;
+        enemyCount = rnd.nextInt(4);
+        for(int i = 0; i < enemyCount; i++){
+            presentNum = rnd.nextInt(4);
+            if(!MyArmy.getArmy().get(presentNum).isDead() && presentNum != pastNum){
+                units.add(MyArmy.getArmy().get(presentNum));
+            }
+            pastNum = presentNum;
+        }
+        return units;
+    }
+    public void attack(){
+        int soldier;
+        ArrayList<Unit> units;
+        while(true){
+            soldier = new Random().nextInt(army.size());
+            if(!MyArmy.getArmy().get(soldier).isDead()){
+                break;
+            }
+        }
+        if(soldier == 0 || soldier == 1 ) {
+            units = generateEnemies();
+        }else if(soldier == 3){
+            int enemyCount;
+            Random rnd = new Random();
+            units = new ArrayList<Unit>();
+            int pastNum = 0;
+            int presentNum;
+            enemyCount = rnd.nextInt(4);
+            for(int i = 0; i < enemyCount; i++){
+                presentNum = rnd.nextInt(4);
+                if(!this.army.get(presentNum).isDead() && presentNum != pastNum && this.army.get(presentNum).getColor() != Color.green){
+                    units.add(this.army.get(presentNum));
+                }
+                pastNum = presentNum;
+            }
+        } else{
+            units = new ArrayList<>();
+                while(true) {
+                    int ind = new Random().nextInt(4);
+                    if (!MyArmy.getArmy().get(ind).isDead()) {
+                        units.add(MyArmy.getArmy().get(ind));
+                        break;
+                    }
+                }
+        }
+        this.army.get(soldier).doAction(units);
     }
 
 }

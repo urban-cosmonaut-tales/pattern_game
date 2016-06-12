@@ -11,6 +11,7 @@ import Unit.*;
  */
 public class MyArmy {
     private static MyArmy instance;
+    private static ArrayList<Unit> army;
 
     public static MyArmy getInstance() {
         if (instance == null) {
@@ -18,22 +19,26 @@ public class MyArmy {
         }
         return instance;
     }
-    public ArrayList<Unit> getArmy(){
-        return this.army;
-    }
-    public Unit getSoldier(int n){
-        return army.get(n);
-    }
-    private ArrayList<Unit> army;
     public MyArmy(){
         army = new ArrayList<Unit>(5);
     }
+
+    public static ArrayList<Unit> getArmy(){
+        return army;
+    }
+
+    public Unit getUnit(int n){
+        return army.get(n);
+    }
+
     public void addUnit(Unit unit){
         army.add(unit);
     }
+
     public void addUnit(int index, Unit unit){
         army.add(index, unit);
     }
+
     public void createArmy(int archer, int berserker, int healer, int catapult){
         int[] unitIndexes = {archer, berserker, healer, catapult};
         if(!army.isEmpty())

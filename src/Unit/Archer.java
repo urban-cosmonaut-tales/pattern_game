@@ -1,10 +1,7 @@
 package Unit;
 
-import PatternState.DamagedState;
-import PatternState.DeadState;
-import PatternState.HealthyState;
-import PatternState.State;
-import java.awt.Color;
+
+import java.util.ArrayList;
 
 import static java.lang.Math.abs;
 
@@ -19,13 +16,13 @@ public class Archer extends Unit{
 
 
     @Override
-    public void doAction(Unit[] enemies) {
-        int count = enemies.length;
+    public void doAction(ArrayList<Unit> enemies) {
+        int count = enemies.size();
         int str = strength;
-        for(int i = 0; i < enemies.length; i++){
-            int damage = str/count--;
-            int health = enemies[i].getHealth() - damage;
-            enemies[i].setHealth(health);
+        for(int i = 0; i < enemies.size(); i++){
+            int damage = str / count--;
+            int health = enemies.get(i).getHealth() - damage;
+            enemies.get(i).setHealth(health);
             str = str - abs(damage);
         }
     }

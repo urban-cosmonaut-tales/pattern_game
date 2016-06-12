@@ -6,6 +6,7 @@ import PatternState.HealthyState;
 import PatternState.State;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 /**
  * Created by Евгения on 05.06.2016.
@@ -24,7 +25,7 @@ public abstract class Unit {
     public void setIndex(int n){
         index = n;
     }
-    public int getIndex(){
+    protected int getIndex(){
         return index;
     }
     public void setMaxHealth(int _health){
@@ -47,8 +48,8 @@ public abstract class Unit {
         return maxHealth;
     }
 
-    public abstract void doAction(Unit[] unit);
-    public void changeState(){
+    public abstract void doAction(ArrayList<Unit> enemies);
+    protected void changeState(){
         //System.out.println("change " + strength);
         int percent = (100*health)/maxHealth;
         if(percent <= 35){
@@ -60,7 +61,10 @@ public abstract class Unit {
         }
     }
     public boolean isDead(){
-        return this.health<=0;
+        if(this.health<=0){
+            return true;
+        }
+        else return false;
     }
     public String toString(){
         StringBuffer sb = new StringBuffer();
