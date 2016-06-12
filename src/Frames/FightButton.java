@@ -19,17 +19,17 @@ import java.nio.file.Paths;
 /**
  * Created by Дарья on 23.05.2016.
  */
+// в этом классе описываются кнопки в меню сражения
 public class FightButton extends StackPane {
-    private Image img;
     public FightButton(String ii) throws IOException {
         InputStream is = Files.newInputStream(Paths.get(ii));
-        this.img = new Image(is);
+        Image img = new Image(is);
         is.close();
         ImageView imgView = new ImageView(img);
         imgView.setFitWidth(160);
         imgView.setFitHeight(90);
 
-        Rectangle bg = new Rectangle(80, 45);
+        Rectangle bg = new Rectangle(160, 90);
         bg.setOpacity(0.6);
         bg.setFill(Color.BLACK);
         bg.setEffect(new GaussianBlur(3.5));
@@ -61,8 +61,5 @@ public class FightButton extends StackPane {
             else {setEffect(null);}
             });
         //setOnMouseReleased(event -> setEffect(null));
-    }
-    public void setImg(String ii) throws IOException {
-        this.img = new Image(Files.newInputStream(Paths.get(ii)));
     }
 }

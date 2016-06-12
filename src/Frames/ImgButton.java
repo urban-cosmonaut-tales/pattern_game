@@ -19,8 +19,9 @@ import java.nio.file.Paths;
 /**
  * Created by Дарья on 22.05.2016.
  */
+// класс отвечающий за создание кнопок в меню выбора персонажей
 public class ImgButton extends StackPane {
-    private boolean status;
+    private boolean status; // переменная отвечает за то, выбран этот персонаж в меню или нет
     public ImgButton(String ii) throws IOException {
         status = false;
         InputStream is = Files.newInputStream(Paths.get(ii));
@@ -55,12 +56,21 @@ public class ImgButton extends StackPane {
 
 
         setOnMousePressed(event -> {
-            if (getEffect() == null) {setEffect(drop); status = true;}
-            else {setEffect(null); status = false;}});
+            if (getEffect() == null) {setEffect(drop); status = true;
+                /* если кнопку нажали и на ней не был установлен эффект, значит надо
+                его установить и задать значение статуса как кнопку которую выбрали */
+            }
+            else {setEffect(null); status = false;
+            /* в ином случае убираем эффект и значение статуса соответствует невыбранной кнопке */
+            }});
         //setOnMouseReleased(event -> setEffect(null));
     }
     public boolean getStatus()
     {
         return this.status;
+    }
+    public void setStatus(boolean sts)
+    {
+        this.status = sts;
     }
 }
