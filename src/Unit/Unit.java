@@ -59,6 +59,9 @@ public abstract class Unit {
             this.state = new HealthyState();
         }
     }
+    public boolean isDead(){
+        return this.health<=0;
+    }
     public String toString(){
         StringBuffer sb = new StringBuffer();
         sb.append("вид воина: " + this.getClass().getName());

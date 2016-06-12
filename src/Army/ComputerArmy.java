@@ -1,6 +1,7 @@
 package Army;
 
 import PatternBuilder.*;
+import PatternFactory.*;
 import Unit.*;
 
 import java.util.ArrayList;
@@ -22,48 +23,35 @@ public class ComputerArmy {
 
     public ComputerArmy(){
         army = new ArrayList<Unit>(4);
-        for(int i = 0; i < 4; i++){
-            army.add(addUnit(new Random().nextInt(4)));
-        }
-
     }
 
     public ArrayList<Unit> getArmy(){
         return this.army;
     }
-    public Unit getSoldier(int n){
-        return army.get(n);
+    public Unit getSoldier(int index){
+        return army.get(index);
     }
-    protected Unit addUnit(int num){
-        Unit un = null;
-        UnitBuilder ub;
-        switch (num) {
-            case 0:
-                ub = new ArcherBuilder(new Archer(), new Random().nextInt(4));
-                ub.buildHealth();
-                ub.buildStrength();
-                un = ub.getUnit();
-                break;
-            case 1:
-                ub = new BerserkerBuilder(new Berserker(), new Random().nextInt(4));
-                ub.buildHealth();
-                ub.buildStrength();
-                un = ub.getUnit();
-                break;
-            case 2:
-                ub = new HealerBuilder(new Healer(), new Random().nextInt(4));
-                ub.buildHealth();
-                ub.buildStrength();
-                un = ub.getUnit();
+    public void addUnit(int index, Unit unit){
+        army.add(index, unit);
+    }
+    public void addUnit(Unit unit){
+        army.add(unit);
+    }
+    public void createArmy(int archer, int berserker, int healer, int catapult){
+        int[] unitIndexes = {archer, berserker, healer, catapult};
+        if(!army.isEmpty())
+            army.clear();
+        Factory[] factories = new Factory[]{new ArcherFactory(), new BerserkerFactory(), new HealerFactory(),
+                new CatapultFactory()};
 
-                break;
-            case 3:
-                ub = new CatapultaBuilder(new Catapult(), new Random().nextInt(4));
-                ub.buildHealth();
-                ub.buildStrength();
-                un = ub.getUnit();
-                break;
+        for (Factory factory: factories){
+            army.add(factory.createUnit());
         }
-        return un;
+        new ArcherBuilder(army.get(0), archer).build();
+        new BerserkerBuilder(army.get(1), berserker).build();
+        new HealerBuilder(army.get(2), healer).build();
+        new CatapultaBuilder(army.get(3), catapult).build();
+
     }
+
 }
