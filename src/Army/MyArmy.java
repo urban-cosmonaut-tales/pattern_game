@@ -20,7 +20,7 @@ public class MyArmy {
         return instance;
     }
     public MyArmy(){
-        army = new ArrayList<Unit>(5);
+        army = new ArrayList<Unit>(4);
     }
 
     public static ArrayList<Unit> getArmy(){

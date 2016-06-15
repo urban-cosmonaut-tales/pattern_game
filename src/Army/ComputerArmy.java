@@ -76,19 +76,19 @@ public class ComputerArmy {
         ArrayList<Unit> units;
         while(true){
             soldier = new Random().nextInt(army.size());
-            if(!MyArmy.getArmy().get(soldier).isDead()){
+            if(!this.army.get(soldier).isDead()){
                 break;
             }
         }
         if(soldier == 0 || soldier == 1 ) {
             units = generateEnemies();
-        }else if(soldier == 3){
+        }else if(soldier == 2){
             int enemyCount;
             Random rnd = new Random();
             units = new ArrayList<Unit>();
             int pastNum = 0;
             int presentNum;
-            enemyCount = rnd.nextInt(4);
+            enemyCount = rnd.nextInt(4)+1;
             for(int i = 0; i < enemyCount; i++){
                 presentNum = rnd.nextInt(4);
                 if(!this.army.get(presentNum).isDead() && presentNum != pastNum && this.army.get(presentNum).getColor() != Color.green){
@@ -105,6 +105,12 @@ public class ComputerArmy {
                         break;
                     }
                 }
+        }
+
+        System.out.println(this.army.get(soldier).toString());
+        System.out.println("enemy");
+        for(Unit un : units){
+            System.out.println(un.toString());
         }
         this.army.get(soldier).doAction(units);
     }

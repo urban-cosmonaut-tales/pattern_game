@@ -1,38 +1,130 @@
 @startuml
 interface Unit{
- int strength;
- int health;
+  protected int health;
+     # int maxHealth;
+     # int strength;
+     # State state = new HealthyState();
+     # int index;
 
-}
-Archer -|> Unit
-Berserker -|> Unit
-Healer -|> Unit
-Catapult -|> Unit
+     + void setHealth(int _health);
+     + void setIndex(int n);
+     + int getIndex();
+     + void setMaxHealth(int _health);
+     + void setStrength(int _strength);
 
-class Archer{
-}
-class Berserker{
-}
-class Healer{
-}
-class Catapult{
-}
+     + Color getColor();
+     + int getHealth();
+     + int getStrength();
+     + int getMaxHealth();
 
-Abstract class UnitFactory{
-+createUnits();
+     + abstract void doAction(Unit[] unit);
+     + void changeState();
+     + String toString();
 }
-class ArcherFactory{
-+ createUnits();
+class Archer extends Unit{
+    + void doAction(Unit[] enemies);
 }
-class HealerFactory{
-+ createUnits();
-}
-class BerserkerFactory{
-+ createUnits();
-}
-class CatapultFactory{
-+ createUnits();
+class Berserker extends Unit{
+    + void doAction(Unit[] unit);
 }
 
+class Healer extends Unit{
+    + void doAction(Unit[] enemy);
+}
 
+class Catapult extends Unit{
+    + void doAction(Unit[] unit);
+}
+
+
+Abstract class Factory{
++createUnits() : Unit;
+}
+class ArcherFactory extends Factory{
++ createUnit() : Unit;
+}
+class HealerFactory extends Factory{
++ createUnit() : Unit;
+}
+class BerserkerFactory extends Factory{
++ createUnit() : Unit;
+}
+class CatapultFactory extends Factory{
++ createUnit() : Unit;
+}
+
+
+abstract class UnitBuilder{
+protected Unit unit;
+    + UnitBuilder(Unit _unit);
+    + Unit getUnit();
+    + void setUnit(Unit _unit);
+    + abstract void buildHealth();
+    + abstract void buildStrength();
+    + abstract void buildMaxHealth();
+    + void build();
+}
+class ArcherBuilder extends UnitBuilder {
+    - int index;
+    - final int health = 40;
+    - final int strength = 10;
+    + ArcherBuilder(Unit _unit, int _index)
+    + void buildHealth()
+    + void buildMaxHealth();
+    + void buildStrength();
+}
+class BerserkerBuilder extends UnitBuilder{
+    - int index;
+    private final int health = 30;
+    private final int strength = 10;
+    public BerserkerBuilder( Unit _unit, int _index);
+    public void buildHealth();
+    public void buildMaxHealth();
+    public void buildStrength();
+}
+class CatapultaBuilder extends UnitBuilder{
+    - int index;
+    - final int health = 40;
+    - final int strength = 10;
+    + CatapultaBuilder(Unit _unit, int _index);
+    + void buildHealth();
+    + void buildMaxHealth();
+    + void buildStrength();
+}
+class HealerBuilder extends UnitBuilder {
+     - int index;
+     - int health = 40;
+     - int power = 10;
+     + HealerBuilder(Unit _unit, int _index);
+     + void buildStrength();
+     + void buildHealth();
+     + void buildMaxHealth();
+}
+
+abstract class State {
+    public abstract Color setColor();
+}
+class HealthyState extends State {
+    + Color setColor();
+}
+class DeadState extends State {
+    public Color setColor();
+}
+class DamagedState extends State {
+    + Color setColor();
+}
+class ComputerArmy {
+    - static ComputerArmy instance;
+    + static ComputerArmy getInstance();
+    - ArrayList<Unit> army;
+    + ComputerArmy();
+    + ArrayList<Unit> getArmy();
+    + Unit getSoldier(int n);
+    # Unit addUnit(int num);
+}
+ComputerArmy ..> UnitBuilder
+ComputerArmy ..> Factory
+Factory ..> Unit
+
+Unit ..> State
 @enduml
