@@ -21,7 +21,9 @@ import java.nio.file.Paths;
  */
 // в этом классе описываются кнопки в меню сражения
 public class FightButton extends StackPane {
+    public boolean state;
     public FightButton(String ii) throws IOException {
+        state = false;
         InputStream is = Files.newInputStream(Paths.get(ii));
         Image img = new Image(is);
         is.close();
@@ -57,9 +59,15 @@ public class FightButton extends StackPane {
         drop.setInput(new Glow());
 
         setOnMousePressed( event -> {
-            if (getEffect() == null) {setEffect(drop);}
-            else {setEffect(null);}
+            if (getEffect() == null) {setEffect(drop); state=true;}
+            else {setEffect(null);state=true;}
             });
         //setOnMouseReleased(event -> setEffect(null));
+    }
+    public boolean getState() {
+        return state;
+    }
+    public void setState(boolean state) {
+        this.state = state;
     }
 }
