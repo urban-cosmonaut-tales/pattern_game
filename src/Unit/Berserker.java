@@ -10,7 +10,6 @@ import java.util.ArrayList;
  */
 public class Berserker extends Unit{
     public Berserker(){
-        maxHealth = 50;
     }
 
     @Override

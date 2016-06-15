@@ -22,5 +22,6 @@ public abstract class UnitBuilder {
     public void build(){
         buildStrength();
         buildHealth();
+        buildMaxHealth();
     }
 }

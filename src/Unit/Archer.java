@@ -11,7 +11,7 @@ import static java.lang.Math.abs;
 public class Archer extends Unit{
 
     public Archer(){
-        maxHealth = 40;
+
     }
 
 

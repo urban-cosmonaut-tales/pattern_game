@@ -11,7 +11,6 @@ import java.util.ArrayList;
 public class Catapult extends Unit{
 
     public Catapult(){
-        maxHealth = 40;
     }
     @Override
     public void doAction(ArrayList<Unit> unit) {

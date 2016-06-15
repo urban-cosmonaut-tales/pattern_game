@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public class Healer extends Unit{
     public Healer(){
-        maxHealth = 30;
+
     }
     @Override
     public void doAction(ArrayList<Unit> enemy) {
