@@ -32,7 +32,7 @@ public class Main {
         ar.add(comArm.getSoldier(0));
         ar.add(comArm.getSoldier(1));
 
-        myArm.getUnit(0).doAction(ar);*/
+        myArm.getUnit(0).doAction(ar);
 
 
 
@@ -40,7 +40,7 @@ public class Main {
 
         System.out.println(myArm.getUnit(0).toString());
         System.out.println(comArm.getSoldier(0).toString());
-        System.out.println(comArm.getSoldier(1).toString());
+        System.out.println(comArm.getSoldier(1).toString());*/
 
         System.out.println("\ncomputer attack \n");
         comArm.attack();

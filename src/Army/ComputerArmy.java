@@ -4,7 +4,7 @@ import PatternBuilder.*;
 import PatternFactory.*;
 import Unit.*;
 
-import java.awt.*;
+import javafx.scene.paint.Color;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.jar.Pack200;
@@ -91,7 +91,7 @@ public class ComputerArmy {
             enemyCount = rnd.nextInt(4)+1;
             for(int i = 0; i < enemyCount; i++){
                 presentNum = rnd.nextInt(4);
-                if(!this.army.get(presentNum).isDead() && presentNum != pastNum && this.army.get(presentNum).getColor() != Color.green){
+                if(!this.army.get(presentNum).isDead() && presentNum != pastNum && this.army.get(presentNum).getColor() != Color.GREEN){
                     units.add(this.army.get(presentNum));
                 }
                 pastNum = presentNum;
