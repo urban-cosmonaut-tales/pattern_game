@@ -1,7 +1,6 @@
 package PatternState;
-import Unit.*;
+import javafx.scene.paint.Color;
 
-import java.awt.*;
 
 /**
  * Created by Дарья on 21.05.2016.

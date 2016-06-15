@@ -1,8 +1,7 @@
 package PatternState;
 
-import Unit.Unit;
+import javafx.scene.paint.Color;
 
-import java.awt.*;
 
 /**
  * Created by Дарья on 21.05.2016.
@@ -10,6 +9,6 @@ import java.awt.*;
 public class DeadState extends State {
     @Override
     public Color setColor() {
-        return Color.red;
+        return Color.RED;
     }
 }

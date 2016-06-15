@@ -4,8 +4,8 @@ import PatternState.DamagedState;
 import PatternState.DeadState;
 import PatternState.HealthyState;
 import PatternState.State;
+import javafx.scene.paint.Color;
 
-import java.awt.*;
 import java.util.ArrayList;
 
 /**

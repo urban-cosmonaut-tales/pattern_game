@@ -28,11 +28,13 @@ public class Main {
         }
 
         // user attack
-        ArrayList<Unit> ar = new ArrayList<>();
+        /*ArrayList<Unit> ar = new ArrayList<>();
         ar.add(comArm.getSoldier(0));
         ar.add(comArm.getSoldier(1));
 
-        myArm.getUnit(0).doAction(ar);
+        myArm.getUnit(0).doAction(ar);*/
+
+
 
         System.out.println("user attack \n");
 
