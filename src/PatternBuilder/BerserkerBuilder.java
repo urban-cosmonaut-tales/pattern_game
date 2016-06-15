@@ -13,6 +13,7 @@ public class BerserkerBuilder extends UnitBuilder{
         super(_unit);
         unit.setIndex(_index);
         index = _index;
+        unit.setMaxHealth(health-(index*3));
     }
     @Override
     public void buildHealth() {

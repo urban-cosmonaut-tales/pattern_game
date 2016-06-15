@@ -13,6 +13,7 @@ public class HealerBuilder extends UnitBuilder {
         super(_unit);
         this.index = _index;
         unit.setIndex(_index);
+        unit.setMaxHealth(health-(index*3));
     }
     @Override
     public void buildStrength() {
