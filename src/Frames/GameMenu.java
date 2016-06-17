@@ -5,6 +5,7 @@ import Army.MyArmy;
 import Unit.Unit;
 import javafx.animation.TranslateTransition;
 import javafx.scene.Parent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -230,7 +231,7 @@ public class GameMenu extends Parent {
         // кнопка начать игру
         MenuButton btnStartGame = new MenuButton("START GAME");
         btnStartGame.setOnMouseClicked( event -> {
-            if(flag==false) {
+            if(!flag) {
                 fUnitPlayer = new FightButton[4];
                 fUnitComp = new FightButton[4];
                 //
@@ -241,7 +242,7 @@ public class GameMenu extends Parent {
                 countAr=0; countHl=0; countBr=0; countKp=0;
                 numAr=-1; numHl=-1; numBr=-1; numKp=-1;
             }
-            if (flag == true) { // если армию уже создавали обнуляем все переменные необходимые для боя
+            if (flag) { // если армию уже создавали обнуляем все переменные необходимые для боя
                 fUnitPlayer[0] = null; fUnitPlayer[1] = null; fUnitPlayer[2] = null; fUnitPlayer[3] = null;
                 fUnitComp[0] = null; fUnitComp[1] = null; fUnitComp[2] = null; fUnitComp[3] = null;
                 //
@@ -265,22 +266,22 @@ public class GameMenu extends Parent {
             }
             try {
                 for(int i=0;i<4;i++){
-                    if(unitAr[i].getStatus()== true) {
+                    if(unitAr[i].getStatus()) {
                         countAr++; numAr=i;
                         unitAr[i].setEffect(null);
                         unitAr[i].setStatus(false);
                         }
-                    if(unitHl[i].getStatus()== true) {
+                    if(unitHl[i].getStatus()) {
                         countHl++; numHl=i;
                         unitHl[i].setEffect(null);
                         unitHl[i].setStatus(false);
                         }
-                    if(unitBer[i].getStatus()== true) {
+                    if(unitBer[i].getStatus()) {
                         countBr++; numBr=i;
                         unitBer[i].setEffect(null);
                         unitBer[i].setStatus(false);
                         }
-                    if(unitKatp[i].getStatus()== true) {
+                    if(unitKatp[i].getStatus()) {
                         countKp++; numKp=i;
                         unitKatp[i].setEffect(null);
                         unitKatp[i].setStatus(false);
@@ -329,16 +330,16 @@ public class GameMenu extends Parent {
                 fComputer[0] = new UnitOptions(realArmyComp.getSoldier(0).getHealth(),
                         realArmyComp.getSoldier(0).getStrength(),realArmyComp.getSoldier(0).getColor(),false);
                 fComputer[1] = new UnitOptions(realArmyComp.getSoldier(1).getHealth(),
-                        realArmyComp.getSoldier(1).getStrength(),realArmyComp.getSoldier(0).getColor(),false);
+                        realArmyComp.getSoldier(1).getStrength(),realArmyComp.getSoldier(1).getColor(),false);
                 fComputer[2] = new UnitOptions(realArmyComp.getSoldier(2).getHealth(),
-                        realArmyComp.getSoldier(2).getStrength(),realArmyComp.getSoldier(0).getColor(),true);
+                        realArmyComp.getSoldier(2).getStrength(),realArmyComp.getSoldier(2).getColor(),true);
                 fComputer[3] = new UnitOptions(realArmyComp.getSoldier(3).getHealth(),
-                        realArmyComp.getSoldier(3).getStrength(),realArmyComp.getSoldier(0).getColor(),false);
+                        realArmyComp.getSoldier(3).getStrength(),realArmyComp.getSoldier(3).getColor(),false);
                 //
 
                 countAr=0; countHl=0; countBr=0; countKp=0;
                 numAr=-1; numHl=-1; numBr=-1; numKp=-1;
-                if (flag == false) { // если переменные обнулены или еще ни разу не создавались
+                if (!flag) { // если переменные обнулены или еще ни разу не создавались
                     // заполняем меню элементами
                     menuMyArmy.getChildren().addAll(fUnitPlayer[0], fUnitPlayer[1], fUnitPlayer[2], fUnitPlayer[3], btnFight);
                     menuComputerArmy.getChildren().addAll(fUnitComp[0], fUnitComp[1], fUnitComp[2], fUnitComp[3], btnExitGame);
@@ -371,16 +372,18 @@ public class GameMenu extends Parent {
 
         });
 
+
+
         btnFight.setOnMouseClicked(event -> {
             int countFU = 0;
             int countFC = 0;
             int[] numberFU;
             int[] numberFC;
             for (int i=0;i<4;i++) {
-                if(fUnitPlayer[i].getState() == true) {
+                if(fUnitPlayer[i].getState()) {
                     countFU++;
                 }
-                if (fUnitComp[i].getState() == true) {
+                if (fUnitComp[i].getState()) {
                     countFC++;
                 }
             }
@@ -396,13 +399,13 @@ public class GameMenu extends Parent {
             int fc=0;
 
             for (int i=0;i<4;i++) {
-                if(fUnitPlayer[i].getState() == true) {
+                if(fUnitPlayer[i].getState()) {
                     numberFU[fu] = i;
                     fu++;
                     fUnitPlayer[i].setEffect(null);
                     fUnitPlayer[i].setState(false);
                 }
-                if (fUnitComp[i].getState() == true) {
+                if (fUnitComp[i].getState()) {
                     numberFC[fc] = i;
                     fc++;
                     fUnitComp[i].setEffect(null);
@@ -418,7 +421,7 @@ public class GameMenu extends Parent {
                 if(unitClass.equals(realArmyMy.getUnit(0).getClass())) {
                     System.out.println("this real archer");
                     for(int i=0;i<countFC;i++) {
-                        arrayDamage.add(realArmyComp.getSoldier(i));
+                        arrayDamage.add(realArmyComp.getSoldier(numberFC[i]));
                     }
                     realArmyMy.getUnit(0).doAction(arrayDamage);
                 }
@@ -429,7 +432,7 @@ public class GameMenu extends Parent {
                         return;
                     }
                     for(int i=0;i<countFC;i++) {
-                        arrayDamage.add(realArmyComp.getSoldier(i));
+                        arrayDamage.add(realArmyComp.getSoldier(numberFC[i]));
                     }
                     realArmyMy.getUnit(1).doAction(arrayDamage);
                 }
@@ -440,14 +443,14 @@ public class GameMenu extends Parent {
                         return;
                     }
                     for(int i=0;i<countFC;i++) {
-                        arrayDamage.add(realArmyComp.getSoldier(i));
+                        arrayDamage.add(realArmyComp.getSoldier(numberFC[i]));
                     }
                     realArmyMy.getUnit(3).doAction(arrayDamage);
 
                 }
             }
             else if (countFC == 0){
-                ArrayList<Unit> arrayHl = null;
+                ArrayList<Unit> arrayHl = new ArrayList<Unit>();
                 boolean fheal = false;
                 for (int i=0; i<countFU;i++) {
                     Class<?> unitClass = realArmyMy.getUnit(numberFU[i]).getClass();
@@ -455,10 +458,10 @@ public class GameMenu extends Parent {
                         System.out.println("this real hil");
                         fheal=true;
                     } else {
-                        arrayHl.add(realArmyMy.getUnit(i));
+                        arrayHl.add(realArmyMy.getUnit(numberFU[i]));
                     }
                 }
-                if (fheal == false) {
+                if (!fheal) {
                     JOptionPane.showMessageDialog(null,"\n" + "Not set healer");
                     return;
                 }
@@ -469,7 +472,23 @@ public class GameMenu extends Parent {
                 JOptionPane.showMessageDialog(null,"\n" + "Healer does not treat the enemy");
                 return;
             }
+            fUnit[0].textHp.setText("Health: " + Integer.toString(realArmyMy.getUnit(0).getHealth()));
+            fUnit[1].textHp.setText("Health: " + Integer.toString(realArmyMy.getUnit(1).getHealth()));
+            fUnit[2].textHp.setText("Health: " + Integer.toString(realArmyMy.getUnit(2).getHealth()));
+            fUnit[3].textHp.setText("Health: " + Integer.toString(realArmyMy.getUnit(3).getHealth()));
+            fUnit[0].st.setFill(realArmyMy.getUnit(0).getColor());
+            fUnit[1].st.setFill(realArmyMy.getUnit(1).getColor());
+            fUnit[2].st.setFill(realArmyMy.getUnit(2).getColor());
+            fUnit[3].st.setFill(realArmyMy.getUnit(3).getColor());
 
+            fComputer[0].textHp.setText("Health: " + Integer.toString(realArmyComp.getSoldier(0).getHealth()));
+            fComputer[1].textHp.setText("Health: " + Integer.toString(realArmyComp.getSoldier(1).getHealth()));
+            fComputer[2].textHp.setText("Health: " + Integer.toString(realArmyComp.getSoldier(2).getHealth()));
+            fComputer[3].textHp.setText("Health: " + Integer.toString(realArmyComp.getSoldier(3).getHealth()));
+            fComputer[0].st.setFill(realArmyComp.getSoldier(0).getColor());
+            fComputer[1].st.setFill(realArmyComp.getSoldier(1).getColor());
+            fComputer[2].st.setFill(realArmyComp.getSoldier(2).getColor());
+            fComputer[3].st.setFill(realArmyComp.getSoldier(3).getColor());
 
             try {
                 sleep(1000);
@@ -478,37 +497,15 @@ public class GameMenu extends Parent {
             }
             realArmyComp.attack();
 
-            /*
-            fUnit[0] = new UnitOptions(realArmyMy.getUnit(0).getHealth(),
-                    realArmyMy.getUnit(0).getStrength(),realArmyMy.getUnit(0).getColor(), false);
-            fUnit[1] = new UnitOptions(realArmyMy.getUnit(1).getHealth(),
-                    realArmyMy.getUnit(1).getStrength(),realArmyMy.getUnit(1).getColor(),true);
-            fUnit[2] = new UnitOptions(realArmyMy.getUnit(2).getHealth(,
-                    realArmyMy.getUnit(2).getStrength(),realArmyMy.getUnit(2).getColor(),false);
-            fUnit[3] = new UnitOptions(realArmyMy.getUnit(3).getHealth(),
-                    realArmyMy.getUnit(3).getStrength(),realArmyMy.getUnit(3).getColor(),false);
+            fUnit[0].textHp.setText("Health: " + Integer.toString(realArmyMy.getUnit(0).getHealth()));
+            fUnit[1].textHp.setText("Health: " + Integer.toString(realArmyMy.getUnit(1).getHealth()));
+            fUnit[2].textHp.setText("Health: " + Integer.toString(realArmyMy.getUnit(2).getHealth()));
+            fUnit[3].textHp.setText("Health: " + Integer.toString(realArmyMy.getUnit(3).getHealth()));
 
-            fComputer[0] = new UnitOptions(realArmyComp.getSoldier(0).getHealth(),
-                    realArmyComp.getSoldier(0).getStrength(),realArmyComp.getSoldier(0).getColor(),false);
-            fComputer[1] = new UnitOptions(realArmyComp.getSoldier(1).getHealth(),
-                    realArmyComp.getSoldier(1).getStrength(),realArmyComp.getSoldier(0).getColor(),true);
-            fComputer[2] = new UnitOptions(realArmyComp.getSoldier(2).getHealth(),
-                    realArmyComp.getSoldier(2).getStrength(),realArmyComp.getSoldier(0).getColor(),false);
-            fComputer[3] = new UnitOptions(realArmyComp.getSoldier(3).getHealth(),
-                    realArmyComp.getSoldier(3).getStrength(),realArmyComp.getSoldier(0).getColor(),false);
-            */
-            System.out.println("MY ARMY STATE:");
-            System.out.println(realArmyMy.getUnit(0).getHealth());
-            System.out.println(realArmyMy.getUnit(1).getHealth());
-            System.out.println(realArmyMy.getUnit(2).getHealth());
-            System.out.println(realArmyMy.getUnit(3).getHealth());
-
-            System.out.println("COMPUTER ARMY STATE:");
-            System.out.println(realArmyComp.getSoldier(0).getHealth());
-            System.out.println(realArmyComp.getSoldier(1).getHealth());
-            System.out.println(realArmyComp.getSoldier(2).getHealth());
-            System.out.println(realArmyComp.getSoldier(3).getHealth());
-
+            fComputer[0].textHp.setText("Health: " + Integer.toString(realArmyComp.getSoldier(0).getHealth()));
+            fComputer[1].textHp.setText("Health: " + Integer.toString(realArmyComp.getSoldier(1).getHealth()));
+            fComputer[2].textHp.setText("Health: " + Integer.toString(realArmyComp.getSoldier(2).getHealth()));
+            fComputer[3].textHp.setText("Health: " + Integer.toString(realArmyComp.getSoldier(3).getHealth()));
         });
 
         btnExitGame.setOnMouseClicked( event -> {
