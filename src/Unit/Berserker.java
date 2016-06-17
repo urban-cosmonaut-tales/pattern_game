@@ -14,9 +14,7 @@ public class Berserker extends Unit{
 
     @Override
     public void doAction(ArrayList<Unit> unit) {
-        for(int i = 0; i < unit.size(); i++){
-            int damage = unit.get(i).getHealth() - strength;
-            unit.get(i).setHealth(damage);
-        }
+        int damage = unit.get(0).getHealth() - strength;
+        unit.get(0).setHealth(damage);
     }
 }

@@ -14,7 +14,9 @@ public class Catapult extends Unit{
     }
     @Override
     public void doAction(ArrayList<Unit> unit) {
-        int damage = unit.get(0).getHealth() - strength;
-        unit.get(0).setHealth(damage);
+        for(int i = 0; i < unit.size(); i++){
+            int damage = unit.get(i).getHealth() - strength;
+            unit.get(i).setHealth(damage);
+        }
     }
 }

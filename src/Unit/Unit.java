@@ -19,7 +19,13 @@ public abstract class Unit {
     protected int index;
 
     public void setHealth(int _health){
-        this.health = _health;
+        if(_health >= this.maxHealth){
+            this.health = this.maxHealth;
+        }else if(_health <=0){
+            this.health = 0;
+        }else{
+            this.health = _health;
+        }
         this.changeState();
     }
     public void setIndex(int n){
