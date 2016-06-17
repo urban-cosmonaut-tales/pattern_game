@@ -21,7 +21,9 @@ public abstract class Unit {
     public void setHealth(int _health){
         if(_health >= this.maxHealth){
             this.health = this.maxHealth;
-        }else {
+        }else if(_health <=0){
+            this.health = 0;
+        }else{
             this.health = _health;
         }
         this.changeState();
