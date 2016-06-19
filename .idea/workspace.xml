@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="60760a97-17b9-46a6-8251-7450e0b4b181" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Army/ComputerArmy.java" afterPath="$PROJECT_DIR$/src/Army/ComputerArmy.java" />
     </list>
     <ignored path="pattern_game.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -765,7 +764,7 @@
       <workItem from="1466079176841" duration="2296000" />
       <workItem from="1466161747102" duration="2085000" />
       <workItem from="1466185136151" duration="3612000" />
-      <workItem from="1466367315439" duration="5123000" />
+      <workItem from="1466367315439" duration="5200000" />
     </task>
     <task id="LOCAL-00001" summary="сделана генерация армии компьютера&#10;доработыны методы атаки&#10;паттерн синглтон на армии компютера и игрока">
       <created>1465254859937</created>
@@ -886,11 +885,18 @@
       <option name="project" value="LOCAL" />
       <updated>1466372804130</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="ошибка берсеркера">
+      <created>1466372895382</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1466372895382</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62512000" />
+    <option name="totallyTimeSpent" value="62589000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
