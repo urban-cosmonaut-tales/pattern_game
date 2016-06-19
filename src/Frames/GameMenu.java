@@ -6,6 +6,7 @@ import Unit.Unit;
 import javafx.animation.TranslateTransition;
 import javafx.event.EventHandler;
 import javafx.scene.Parent;
+import javafx.scene.effect.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -376,6 +377,14 @@ public class GameMenu extends Parent {
 
 
         btnFight.setOnMouseClicked(event -> {
+            /*
+            for (int i=0;i<4;i++) {
+                fUnitPlayer[i].setOpacity(1);
+            }
+            for (int i=0;i<4;i++) {
+                fUnitComp[i].setOpacity(1);
+            }
+            */
             int countFU = 0;
             int countFC = 0;
             int[] numberFU;
@@ -413,8 +422,6 @@ public class GameMenu extends Parent {
                     fUnitComp[i].setState(false);
                 }
             }
-            //Class<?> unitClass = realArmyMy.getUnit(numberFU).getClass();
-            //System.out.println(unitClass.toString());
 
             if(countFU == 1) {
                 Class<?> unitClass = realArmyMy.getUnit(numberFU[0]).getClass();
@@ -543,7 +550,26 @@ public class GameMenu extends Parent {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+
+
+            // АТАКА КОМПЬЮТЕРА
             realArmyComp.attack();
+
+            /*
+            int attackUnit = realArmyComp.getAttackingSoldier();
+            ArrayList<Integer> damageUnit = realArmyComp.getAttackedUnits();
+            fUnitComp[attackUnit].setOpacity(0.5);
+            if (realArmyComp.getSoldier(attackUnit).getClass().equals(realArmyComp.getSoldier(2).getClass())) {
+                for (int i=0;i<damageUnit.size();i++) {
+                    fUnitComp[damageUnit.get(i)].setOpacity(0.5);
+                }
+            }
+            else {
+                for (int i=0;i<damageUnit.size();i++) {
+                    fUnitPlayer[damageUnit.get(i)].setOpacity(0.5);
+                }
+            }
+            */
 
             // отключение мертвых персонажей
             for (int i=0;i<4;i++) {
