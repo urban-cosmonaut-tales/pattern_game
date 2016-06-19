@@ -1,6 +1,37 @@
 @startuml
+class PrimaryFrame{
+ - GameMenu gameMenu;
+    + void start(Stage primaryStage) throws Exception;
+
+    + static void main(String[] args);
+}
+class GameMenu extends Parent {
+    - FightButton[] fUnitPlayer, fUnitComp;
+    - UnitOptions[] fUnit, fComputer;
+    - MyArmy realArmyMy;
+    - ComputerArmy realArmyComp;
+    - boolean flag;
+    - int countAr, countHl, countBr, countKp;
+    - int numAr, numHl, numBr, numKp;
+    - VBox menuMyArmy;
+    - VBox menuComputerArmy;
+    - VBox opMyArmy;
+    - VBox opComputerArmy;
+    - HBox allMyArmy;
+    - HBox allComputerArmy;
+    - HBox menuGame;
+    - String[] Ar;
+    - String[] Hl;
+    - String[] Br;
+    - String[] Kp;
+    + GameMenu() throws IOException;
+}
+PrimaryFrame ..> GameMenu
+GameMenu ..> ComputerArmy
+GameMenu ..> MyArmy
+
 interface Unit{
-  protected int health;
+  # int health;
      # int maxHealth;
      # int strength;
      # State state = new HealthyState();
@@ -55,7 +86,7 @@ class CatapultFactory extends Factory{
 
 
 abstract class UnitBuilder{
-protected Unit unit;
+# Unit unit;
     + UnitBuilder(Unit _unit);
     + Unit getUnit();
     + void setUnit(Unit _unit);
@@ -78,12 +109,12 @@ class ArcherBuilder extends UnitBuilder {
 }
 class BerserkerBuilder extends UnitBuilder{
     - int index;
-    private final int health = 30;
-    private final int strength = 10;
-    public BerserkerBuilder( Unit _unit, int _index);
-    public void buildHealth();
-    public void buildMaxHealth();
-    public void buildStrength();
+    - final int health = 30;
+    - final int strength = 10;
+    + BerserkerBuilder( Unit _unit, int _index);
+    + void buildHealth();
+    + void buildMaxHealth();
+    + void buildStrength();
 }
 class CatapultaBuilder extends UnitBuilder{
     - int index;
@@ -105,13 +136,13 @@ class HealerBuilder extends UnitBuilder {
 }
 
 abstract class State {
-    public abstract Color setColor();
+    + abstract Color setColor();
 }
 class HealthyState extends State {
     + Color setColor();
 }
 class DeadState extends State {
-    public Color setColor();
+    + Color setColor();
 }
 class DamagedState extends State {
     + Color setColor();
@@ -128,7 +159,6 @@ class ComputerArmy {
     + void attack();
 
 }
-Director ..> UnitBuilder
 ComputerArmy..> Director
 ComputerArmy ..> Factory
 Factory ..> Unit

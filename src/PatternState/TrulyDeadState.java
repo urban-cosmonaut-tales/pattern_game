@@ -8,6 +8,6 @@ import javafx.scene.paint.Color;
 public class TrulyDeadState extends State {
     @Override
     public Color setColor() {
-        return Color.BLUE;
+        return Color.DARKBLUE;
     }
 }
