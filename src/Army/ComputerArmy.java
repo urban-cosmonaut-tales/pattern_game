@@ -14,12 +14,20 @@ import java.util.jar.Pack200;
  */
 public class ComputerArmy {
     private static ComputerArmy instance;
+    private Unit attackingSoldier;
+    private ArrayList<Unit> attackedUnits;
 
     public static ComputerArmy getInstance() {
         if (instance == null) {
             instance = new ComputerArmy();
         }
         return instance;
+    }
+    public Unit getAttackingSoldier(){
+        return this.attackingSoldier;
+    }
+    public ArrayList<Unit> getAttackedUnits(){
+        return this.attackedUnits;
     }
     private ArrayList<Unit> army;
 
@@ -113,6 +121,8 @@ public class ComputerArmy {
             System.out.println(un.toString());
         }
         this.army.get(soldier).doAction(units);
+        attackingSoldier = this.army.get(soldier);
+        attackedUnits = units;
     }
 
 }
