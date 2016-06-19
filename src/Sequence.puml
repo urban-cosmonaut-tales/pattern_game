@@ -1,3 +1,5 @@
 @startuml
-User ->
+User -> PrimaryFrame : Button Start
+PrimaryFrame -> GameMenu
+GameMenu ->
 @enduml
