@@ -57,10 +57,10 @@ public abstract class Unit {
     public abstract void doAction(ArrayList<Unit> enemies);
     protected void changeState(){
         //System.out.println("change " + strength);
-        int percent = (100*health)/maxHealth;
+        int percent = (100*this.health)/this.maxHealth;
         if(percent <= 35){
             this.state = new DeadState();
-        }else if(percent <= 70){
+        }else if(percent <= 70 && percent >=36){
             this.state = new DamagedState();
         }else {
             this.state = new HealthyState();
