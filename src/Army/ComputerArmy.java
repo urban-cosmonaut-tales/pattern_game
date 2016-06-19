@@ -69,8 +69,8 @@ public class ComputerArmy {
         ArrayList<Unit> units = new ArrayList<Unit>();
         int pastNum = 0;
         int presentNum;
-        enemyCount = rnd.nextInt(4);
-        for(int i = 0; i < enemyCount; i++){
+        enemyCount = rnd.nextInt(4)+1;
+        for(int i = 1; i < enemyCount; i++){
             presentNum = rnd.nextInt(4);
             if(!MyArmy.getArmy().get(presentNum).isDead() && presentNum != pastNum){
                 units.add(MyArmy.getArmy().get(presentNum));
@@ -97,7 +97,7 @@ public class ComputerArmy {
             int pastNum = 0;
             int presentNum;
             enemyCount = rnd.nextInt(4)+1;
-            for(int i = 0; i < enemyCount; i++){
+            for(int i = 1; i < enemyCount; i++){
                 presentNum = rnd.nextInt(4);
                 if(!this.army.get(presentNum).isDead() && presentNum != pastNum && this.army.get(presentNum).getColor() != Color.GREEN){
                     units.add(this.army.get(presentNum));

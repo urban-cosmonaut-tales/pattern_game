@@ -10,21 +10,25 @@ class GameMenu extends Parent {
     - UnitOptions[] fUnit, fComputer;
     - MyArmy realArmyMy;
     - ComputerArmy realArmyComp;
-    - boolean flag = false;
+    - boolean flag;
     - int countAr, countHl, countBr, countKp;
     - int numAr, numHl, numBr, numKp;
-    - VBox menuMyArmy = new VBox(17);
-    - VBox menuComputerArmy = new VBox(17);
-    - VBox opMyArmy = new VBox(17);
-    - VBox opComputerArmy = new VBox(17);
-    - HBox allMyArmy = new HBox(10);
-    - HBox allComputerArmy = new HBox(10);
-    - HBox menuGame = new HBox(350);
+    - VBox menuMyArmy;
+    - VBox menuComputerArmy;
+    - VBox opMyArmy;
+    - VBox opComputerArmy;
+    - HBox allMyArmy;
+    - HBox allComputerArmy;
+    - HBox menuGame;
     - String[] Ar;
     - String[] Hl;
     - String[] Br;
     - String[] Kp;
     + GameMenu() throws IOException;
+}
+PrimaryFrame ..> GameMenu
+GameMenu ..> ComputerArmy
+GameMenu ..> MyArmy
 
 interface Unit{
   # int health;
