@@ -54,5 +54,13 @@ public class Main {
             System.out.println(un.toString());
         }
 
+        System.out.println("soldier");
+        System.out.println(comArm.getSoldier(comArm.getAttackingSoldier()));
+        System.out.println("enemies");
+        for(int i = 0; i < comArm.getAttackedUnits().size(); i++){
+            System.out.println(myArm.getUnit(comArm.getAttackedUnits().get(i)));
+        }
+
+
     }
 }

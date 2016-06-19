@@ -14,8 +14,8 @@ import java.util.jar.Pack200;
  */
 public class ComputerArmy {
     private static ComputerArmy instance;
-    private Unit attackingSoldier;
-    private ArrayList<Unit> attackedUnits;
+    private int attackingSoldier;
+    private ArrayList<Integer> attackedUnits = new ArrayList<>();
 
     public static ComputerArmy getInstance() {
         if (instance == null) {
@@ -23,10 +23,10 @@ public class ComputerArmy {
         }
         return instance;
     }
-    public Unit getAttackingSoldier(){
+    public int getAttackingSoldier(){
         return this.attackingSoldier;
     }
-    public ArrayList<Unit> getAttackedUnits(){
+    public ArrayList<Integer> getAttackedUnits(){
         return this.attackedUnits;
     }
     private ArrayList<Unit> army;
@@ -115,14 +115,24 @@ public class ComputerArmy {
                 }
         }
 
-        System.out.println(this.army.get(soldier).toString());
-        System.out.println("enemy");
-        for(Unit un : units){
+       // System.out.println(this.army.get(soldier).toString());
+        //System.out.println("enemy");
+        /*for(Unit un : units){
             System.out.println(un.toString());
-        }
+        }*/
         this.army.get(soldier).doAction(units);
-        attackingSoldier = this.army.get(soldier);
-        attackedUnits = units;
+        attackingSoldier = soldier;
+        for(Unit un : units){
+            if(un.getClass().getName().equals("Unit.Archer")){
+                attackedUnits.add(0);
+            }else if(un.getClass().getName().equals("Unit.Berserker")){
+                attackedUnits.add(1);
+            }else if(un.getClass().getName().equals("Unit.Healer")){
+                attackedUnits.add(2);
+            }else {
+                attackedUnits.add(3);
+            }
+        }
     }
 
 }

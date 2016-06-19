@@ -62,7 +62,10 @@ protected Unit unit;
     + abstract void buildHealth();
     + abstract void buildStrength();
     + abstract void buildMaxHealth();
-    + void build();
+
+}
+class Director{
++ void build();
 }
 class ArcherBuilder extends UnitBuilder {
     - int index;
@@ -121,10 +124,37 @@ class ComputerArmy {
     + ArrayList<Unit> getArmy();
     + Unit getSoldier(int n);
     # Unit addUnit(int num);
+    - ArrayList<Unit> generateEnemies();
+    + void attack();
+
 }
-ComputerArmy ..> UnitBuilder
+Director ..> UnitBuilder
+ComputerArmy..> Director
 ComputerArmy ..> Factory
 Factory ..> Unit
 
 Unit ..> State
+
+
+class MyArmy {
+    - static MyArmy instance;
+    - static ArrayList<Unit> army;
+
+    + static MyArmy getInstance();
+    + MyArmy();
+    + static ArrayList<Unit> getArmy();
+
+    + Unit getUnit(int n);
+
+    + void addUnit(Unit unit);
+
+    + void addUnit(int index, Unit unit);
+
+    + void createArmy(int archer, int berserker, int healer, int catapult);
+}
+MyArmy ..> Unit
+Director ..> UnitBuilder
+MyArmy ..> Factory
+MyArmy..> Director
+
 @enduml
