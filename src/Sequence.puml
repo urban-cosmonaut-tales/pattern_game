@@ -1,5 +1,53 @@
 @startuml
 User -> PrimaryFrame : Button Start
 PrimaryFrame -> GameMenu
-GameMenu ->
+
+GameMenu -> MyArmy : CreateArmy
+
+MyArmy-> Factory : createUnit
+MyArmy -> Director : build
+Di
+
+loop MyArmy size times
+GameMenu -> MyArmy : getUnit
+MyArmy -> Unit : getHealth
+MyArmy -> Unit : getStrength
+MyArmy -> Unit : getColor
+end
+
+GameMenu -> ComputerArmy : CreateArmy
+loop MyArmy size times
+GameMenu -> ComputerArmy : getUnit
+ComputerArmy -> Unit : getHealth
+ComputerArmy -> Unit : getStrength
+ComputerArmy -> Unit : getColor
+end
+
+User ->  MyArmy : getUnit
+User ->  ComputerArmy : getUnit...
+User -> GameMenu : FightButton
+Unit -> Unit : doAction
+
+GameMenu -> ComputerArmy: getUnit
+ComputerArmy -> Unit : getHealth
+
+GameMenu -> ComputerArmy: getUnit
+ComputerArmy -> Unit : getHealth
+ComputerArmy -> Unit : getStrength
+ComputerArmy -> Unit : getColor
+
+
+ComputerArmy -> MyArmy : attack
+Unit -> Unit : doAction
+
+GameMenu -> MyArmy : getUnit
+MyArmy -> Unit : getHealth
+
+GameMenu -> MyArmy : getUnit
+MyArmy -> Unit : getHealth
+MyArmy -> Unit : getStrength
+MyArmy -> Unit : getColor
+
+
+
 @enduml

@@ -99,7 +99,7 @@ public class ComputerArmy {
             enemyCount = rnd.nextInt(4)+1;
             for(int i = 0; i < enemyCount; i++){
                 presentNum = rnd.nextInt(4);
-                if(!this.army.get(presentNum).isDead() && presentNum != pastNum && this.army.get(presentNum).getColor() != Color.GREEN){
+                if(!this.army.get(presentNum).isDead() && presentNum != pastNum && this.army.get(presentNum).getColor() != Color.GREEN && presentNum != 2){
                     units.add(this.army.get(presentNum));
                 }
                 pastNum = presentNum;

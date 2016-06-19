@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60760a97-17b9-46a6-8251-7450e0b4b181" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pattern_game/Army/ComputerArmy.class" afterPath="$PROJECT_DIR$/out/production/pattern_game/Army/ComputerArmy.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pattern_game/Frames/FightButton.class" afterPath="$PROJECT_DIR$/out/production/pattern_game/Frames/FightButton.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pattern_game/Frames/GameMenu.class" afterPath="$PROJECT_DIR$/out/production/pattern_game/Frames/GameMenu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pattern_game/Unit/Unit.class" afterPath="$PROJECT_DIR$/out/production/pattern_game/Unit/Unit.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/pattern_game/classesuml.puml" afterPath="$PROJECT_DIR$/out/production/pattern_game/classesuml.puml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PatternState/TrulyDeadState.java" afterPath="$PROJECT_DIR$/src/PatternState/TrulyDeadState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Army/ComputerArmy.java" afterPath="$PROJECT_DIR$/src/Army/ComputerArmy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sequence.puml" afterPath="$PROJECT_DIR$/src/Sequence.puml" />
     </list>
     <ignored path="pattern_game.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,8 +69,8 @@
       <file leaf-file-name="Sequence.puml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Sequence.puml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+            <state relative-caret-position="136">
+              <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -92,25 +88,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ComputerArmy.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ComputerArmy.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Army/ComputerArmy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="72" column="31" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
+            <state relative-caret-position="344">
+              <caret line="101" column="153" selection-start-line="101" selection-start-column="153" selection-end-line="101" selection-end-column="153" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1929#1935#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TrulyDeadState.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/PatternState/TrulyDeadState.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -120,16 +106,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
               <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameMenu.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Frames/GameMenu.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="633" column="5" selection-start-line="26" selection-start-column="0" selection-end-line="633" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -201,9 +177,9 @@
         <option value="$PROJECT_DIR$/src/Unit/Main.java" />
         <option value="$PROJECT_DIR$/src/Unit/Unit.java" />
         <option value="$PROJECT_DIR$/src/classesuml.puml" />
+        <option value="$PROJECT_DIR$/src/PatternState/TrulyDeadState.java" />
         <option value="$PROJECT_DIR$/src/Sequence.puml" />
         <option value="$PROJECT_DIR$/src/Army/ComputerArmy.java" />
-        <option value="$PROJECT_DIR$/src/PatternState/TrulyDeadState.java" />
       </list>
     </option>
   </component>
@@ -766,7 +742,7 @@
       <workItem from="1466079176841" duration="2296000" />
       <workItem from="1466161747102" duration="2085000" />
       <workItem from="1466185136151" duration="3612000" />
-      <workItem from="1466367315439" duration="6744000" />
+      <workItem from="1466367315439" duration="10124000" />
     </task>
     <task id="LOCAL-00001" summary="сделана генерация армии компьютера&#10;доработыны методы атаки&#10;паттерн синглтон на армии компютера и игрока">
       <created>1465254859937</created>
@@ -908,17 +884,24 @@
       <option name="project" value="LOCAL" />
       <updated>1466374328641</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="немного сменила цвет">
+      <created>1466374526433</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1466374526433</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64133000" />
+    <option name="totallyTimeSpent" value="67513000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33812407" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31164902" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3267974" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -926,7 +909,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16830066" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.04411765" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.039215688" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -969,7 +952,8 @@
     <MESSAGE value="знать врагов и атакующего со стороны ком-па в виде индексов" />
     <MESSAGE value="смена состояния объекта проба" />
     <MESSAGE value="ошибка берсеркера" />
-    <option name="LAST_COMMIT_MESSAGE" value="ошибка берсеркера" />
+    <MESSAGE value="немного сменила цвет" />
+    <option name="LAST_COMMIT_MESSAGE" value="немного сменила цвет" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -982,50 +966,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Unit/Catapult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Unit/Unit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="47" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
-          <folding>
-            <element signature="e#764#765#0" expanded="true" />
-            <element signature="e#804#805#0" expanded="true" />
-            <element signature="e#848#849#0" expanded="true" />
-            <element signature="e#889#890#0" expanded="true" />
-            <element signature="e#919#920#0" expanded="true" />
-            <element signature="e#958#959#0" expanded="true" />
-            <element signature="e#986#987#0" expanded="true" />
-            <element signature="e#1020#1021#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Unit/Archer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Unit/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1356,14 +1296,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Sequence.puml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Unit/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -1390,22 +1322,133 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Army/ComputerArmy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="72" column="31" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1929#1935#0" expanded="true" />
-          </folding>
+    <entry file="uml://JAVA/PatternState.TrulyDeadState">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>PatternState.TrulyDeadState</OriginalElement>
+          <nodes>
+            <node x="" y="">PatternState.State</node>
+            <node x="" y="">PatternState.TrulyDeadState</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="57.0" y="55.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="" y="">com</node>
+            <node x="" y="">Frames</node>
+            <node x="" y="">Army</node>
+            <node x="" y="">netscape</node>
+            <node x="" y="">oracle</node>
+            <node x="" y="">org</node>
+            <node x="" y="">Unit</node>
+            <node x="" y="">Image</node>
+            <node x="" y="">sun</node>
+            <node x="" y="">PatternBuilder</node>
+            <node x="" y="">PatternState</node>
+            <node x="" y="">META-INF</node>
+            <node x="" y="">jdk</node>
+            <node x="" y="">java</node>
+            <node x="" y="">javax</node>
+            <node x="" y="">PatternFactory</node>
+            <node x="" y="">javafx</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="226.0" y="160.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/Frames">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>Frames</OriginalElement>
+          <nodes>
+            <node x="" y="">Frames.ClassName</node>
+            <node x="" y="">Frames.ImgButton</node>
+            <node x="" y="">Frames.MenuButton</node>
+            <node x="" y="">Frames.PrimaryFrame</node>
+            <node x="" y="">Frames.GameMenu</node>
+            <node x="" y="">Frames.UnitOptions</node>
+            <node x="" y="">Frames.MenuButtonShort</node>
+            <node x="" y="">Frames.FightButton</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="141.0" y="127.5" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/PatternState">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>PatternState</OriginalElement>
+          <nodes>
+            <node x="" y="">PatternState.DamagedState</node>
+            <node x="" y="">PatternState.State</node>
+            <node x="" y="">PatternState.TrulyDeadState</node>
+            <node x="" y="">PatternState.HealthyState</node>
+            <node x="" y="">PatternState.DeadState</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="236.5" y="55.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PatternState/TrulyDeadState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+        <state relative-caret-position="221">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="e#188#189#0" expanded="true" />
+            <element signature="e#225#226#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sequence.puml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Army/ComputerArmy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="101" column="153" selection-start-line="101" selection-start-column="153" selection-end-line="101" selection-end-column="153" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1929#1935#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
