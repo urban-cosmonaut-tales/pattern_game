@@ -4,8 +4,9 @@ import Army.ComputerArmy;
 import Army.MyArmy;
 import Unit.Unit;
 import javafx.animation.TranslateTransition;
+import javafx.event.EventHandler;
 import javafx.scene.Parent;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -13,7 +14,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
 import javax.swing.*;
-import java.awt.*;
+import javax.swing.text.View;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
@@ -24,24 +25,24 @@ import static java.lang.Thread.sleep;
  * Created by Дарья on 22.05.2016.
  */
 public class GameMenu extends Parent {
-    FightButton[] fUnitPlayer, fUnitComp; // объекты-кнопки для самой битвы.
-    UnitOptions[] fUnit, fComputer;
-    MyArmy realArmyMy;
-    ComputerArmy realArmyComp;
-    boolean flag = false; // флаг для того, чтобы понять надо перезагружать армию или нет
-    int countAr, countHl, countBr, countKp; // количество выделенных персонажей
-    int numAr, numHl, numBr, numKp; // номер выделенного персонажа
-    VBox menuMyArmy = new VBox(17); // меню в котором отображаются юниты армии игрока во время битвы
-    VBox menuComputerArmy = new VBox(17); // меню в котором отображаются юниты армии компьютера во время битвы
-    VBox opMyArmy = new VBox(17);
-    VBox opComputerArmy = new VBox(17);
-    HBox allMyArmy = new HBox(10);
-    HBox allComputerArmy = new HBox(10);
-    HBox menuGame = new HBox(350); // здесь лежат армия игрока, армия компьютера и необходимые кнопки меню битвы
-    String[] Ar; // массив с путями до картинок лучников
-    String[] Hl; // массив с путями до картинок целителей
-    String[] Br; // массив с путями до картинок воинов
-    String[] Kp; // массив с путями до картинок катапульт
+    private FightButton[] fUnitPlayer, fUnitComp; // объекты-кнопки для самой битвы.
+    private UnitOptions[] fUnit, fComputer;
+    private MyArmy realArmyMy;
+    private ComputerArmy realArmyComp;
+    private boolean flag = false; // флаг для того, чтобы понять надо перезагружать армию или нет
+    private int countAr, countHl, countBr, countKp; // количество выделенных персонажей
+    private int numAr, numHl, numBr, numKp; // номер выделенного персонажа
+    private VBox menuMyArmy = new VBox(17); // меню в котором отображаются юниты армии игрока во время битвы
+    private VBox menuComputerArmy = new VBox(17); // меню в котором отображаются юниты армии компьютера во время битвы
+    private VBox opMyArmy = new VBox(17);
+    private VBox opComputerArmy = new VBox(17);
+    private HBox allMyArmy = new HBox(10);
+    private HBox allComputerArmy = new HBox(10);
+    private HBox menuGame = new HBox(350); // здесь лежат армия игрока, армия компьютера и необходимые кнопки меню битвы
+    private String[] Ar; // массив с путями до картинок лучников
+    private String[] Hl; // массив с путями до картинок целителей
+    private String[] Br; // массив с путями до картинок воинов
+    private String[] Kp; // массив с путями до картинок катапульт
     public GameMenu() throws IOException {
         VBox menu0 = new VBox(10); // стартовое меню
         VBox menu2 = new VBox(10); // меню информации об игре
@@ -71,30 +72,30 @@ public class GameMenu extends Parent {
 
         // присваиваем массивы 4 элемента и для каждого указываем путь до картинки
         Ar = new String[4];
-        Ar[0] = new String("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\arch\\icon.jpg");
-        Ar[1] = new String("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\arch\\Mirana.png");
-        Ar[2] = new String("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\arch\\templar-assassin.png");
-        Ar[3] = new String("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\arch\\windranger.png");
+        Ar[0] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\arch\\icon.jpg";
+        Ar[1] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\arch\\Mirana.png";
+        Ar[2] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\arch\\templar-assassin.png";
+        Ar[3] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\arch\\windranger.png";
 
         Hl = new String[4];
-        Hl[0] = new String("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\hil\\Disruptor.png");
-        Hl[1] = new String("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\hil\\hor_ico.png");
-        Hl[2] = new String("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\hil\\icon.jpg");
-        Hl[3] = new String("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\hil\\sky.png");
+        Hl[0] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\hil\\Disruptor.png";
+        Hl[1] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\hil\\hor_ico.png";
+        Hl[2] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\hil\\icon.jpg";
+        Hl[3] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\hil\\sky.png";
 
         Br = new String[4];
-        Br[0] = new String("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\berserker\\Bloodseeker.png");
-        Br[1] = new String("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\berserker\\hor_ico.png");
-        Br[2] = new String("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\berserker\\icon.jpg");
-        Br[3] = new String("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\berserker\\spirit_breaker_full.png");
+        Br[0] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\berserker\\Bloodseeker.png";
+        Br[1] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\berserker\\hor_ico.png";
+        Br[2] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\berserker\\icon.jpg";
+        Br[3] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\berserker\\spirit_breaker_full.png";
 
         Kp = new String[4];
-        Kp[0] = new String("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\ktp\\Gyrocopter.png");
-        Kp[1] = new String("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\ktp\\I'm Sorry pubs of the future3.png");
-        Kp[2] = new String("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\ktp\\icon (1).jpg");
-        Kp[3] = new String("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\ktp\\icon.jpg");
+        Kp[0] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\ktp\\Gyrocopter.png";
+        Kp[1] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\ktp\\I'm Sorry pubs of the future3.png";
+        Kp[2] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\ktp\\icon (1).jpg";
+        Kp[3] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\ktp\\icon.jpg";
 
-        String nol = new String("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Tantsuyut-vse.jpg");
+        String nol = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Tantsuyut-vse.jpg";
 
         // создаем заголовок для каждого класса и создаем кнопки-картинки
         ClassName ar = new ClassName("Archers class", Color.DARKBLUE);
@@ -419,14 +420,14 @@ public class GameMenu extends Parent {
                 Class<?> unitClass = realArmyMy.getUnit(numberFU[0]).getClass();
                 ArrayList<Unit> arrayDamage = new ArrayList<Unit>();
                 if(unitClass.equals(realArmyMy.getUnit(0).getClass())) {
-                    System.out.println("this real archer");
+                    //System.out.println("this real archer");
                     for(int i=0;i<countFC;i++) {
                         arrayDamage.add(realArmyComp.getSoldier(numberFC[i]));
                     }
                     realArmyMy.getUnit(0).doAction(arrayDamage);
                 }
                 if(unitClass.equals(realArmyMy.getUnit(1).getClass())) {
-                    System.out.println("this real ber");
+                    //System.out.println("this real ber");
                     if(countFC != 1) {
                         JOptionPane.showMessageDialog(null,"\n" + "Berserker can attack only one unit");
                         return;
@@ -437,8 +438,14 @@ public class GameMenu extends Parent {
                     realArmyMy.getUnit(1).doAction(arrayDamage);
                 }
                 if(unitClass.equals(realArmyMy.getUnit(3).getClass())) {
-                    System.out.println("this real kap");
-                    if(countFC != 4) {
+                    //System.out.println("this real kap");
+                    int countLive = 0;
+                    for (int i=0;i<4;i++) {
+                        if(realArmyComp.getSoldier(i).getHealth() != 0) {
+                            countLive++;
+                        }
+                    }
+                    if(countFC != countLive) {
                         JOptionPane.showMessageDialog(null,"\n" + "For attack catapult the enemy select all unit");
                         return;
                     }
@@ -447,6 +454,10 @@ public class GameMenu extends Parent {
                     }
                     realArmyMy.getUnit(3).doAction(arrayDamage);
 
+                }
+                if(unitClass.equals(realArmyMy.getUnit(2).getClass())) {
+                    JOptionPane.showMessageDialog(null,"\n" + "Healer does not treat the enemy");
+                    return;
                 }
             }
             else if (countFC == 0){
@@ -472,6 +483,20 @@ public class GameMenu extends Parent {
                 JOptionPane.showMessageDialog(null,"\n" + "Healer does not treat the enemy");
                 return;
             }
+
+            // отключение мертвых персонажей
+            for (int i=0;i<4;i++) {
+                if (realArmyMy.getUnit(i).getHealth() == 0) {
+                        fUnitPlayer[i].setDisable(true);
+                }
+            }
+            for (int i=0;i<4;i++) {
+                if (realArmyComp.getSoldier(i).getHealth() == 0) {
+                    fUnitComp[i].setDisable(true);
+                }
+            }
+
+
             fUnit[0].textHp.setText("Health: " + Integer.toString(realArmyMy.getUnit(0).getHealth()));
             fUnit[1].textHp.setText("Health: " + Integer.toString(realArmyMy.getUnit(1).getHealth()));
             fUnit[2].textHp.setText("Health: " + Integer.toString(realArmyMy.getUnit(2).getHealth()));
@@ -490,12 +515,47 @@ public class GameMenu extends Parent {
             fComputer[2].st.setFill(realArmyComp.getSoldier(2).getColor());
             fComputer[3].st.setFill(realArmyComp.getSoldier(3).getColor());
 
+            if ((realArmyComp.getSoldier(0).getHealth() == 0)&&(realArmyComp.getSoldier(1).getHealth() == 0)&&
+                    (realArmyComp.getSoldier(2).getHealth() == 0)&&(realArmyComp.getSoldier(3).getHealth()== 0)) {
+                JOptionPane.showMessageDialog(null,"\n" + "CONGRATULATIONS !!!");
+                flag = true; // меняется значение флага, необходимое для обнуления массива армии игрока и армии компьютера
+                getChildren().add(menu0);
+                realArmyMy.getArmy().clear();
+                realArmyComp.getArmy().clear();
+
+                TranslateTransition tt = new TranslateTransition(Duration.seconds(0.25), menuGame);
+                tt.setToX(menuGame.getTranslateX() + offset);
+
+                TranslateTransition tt1 = new TranslateTransition(Duration.seconds(0.5), menu0);
+                tt1.setToX(menuGame.getTranslateX());
+
+                tt.play();
+                tt1.play();
+
+                tt.setOnFinished(evt -> {
+                    getChildren().remove(menuGame);
+                });
+                return;
+            }
+
             try {
                 sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             realArmyComp.attack();
+
+            // отключение мертвых персонажей
+            for (int i=0;i<4;i++) {
+                if (realArmyMy.getUnit(i).getHealth() == 0) {
+                    fUnitPlayer[i].setDisable(true);
+                }
+            }
+            for (int i=0;i<4;i++) {
+                if (realArmyComp.getSoldier(i).getHealth() == 0) {
+                    fUnitComp[i].setDisable(true);
+                }
+            }
 
             fUnit[0].textHp.setText("Health: " + Integer.toString(realArmyMy.getUnit(0).getHealth()));
             fUnit[1].textHp.setText("Health: " + Integer.toString(realArmyMy.getUnit(1).getHealth()));
@@ -506,6 +566,29 @@ public class GameMenu extends Parent {
             fComputer[1].textHp.setText("Health: " + Integer.toString(realArmyComp.getSoldier(1).getHealth()));
             fComputer[2].textHp.setText("Health: " + Integer.toString(realArmyComp.getSoldier(2).getHealth()));
             fComputer[3].textHp.setText("Health: " + Integer.toString(realArmyComp.getSoldier(3).getHealth()));
+
+            if ((realArmyMy.getUnit(0).getHealth() == 0)&&(realArmyMy.getUnit(1).getHealth() == 0)&&
+                    (realArmyMy.getUnit(2).getHealth() == 0)&&(realArmyMy.getUnit(3).getHealth()== 0)) {
+                JOptionPane.showMessageDialog(null,"\n" + "you played and lost");
+                flag = true; // меняется значение флага, необходимое для обнуления массива армии игрока и армии компьютера
+                getChildren().add(menu0);
+                realArmyMy.getArmy().clear();
+                realArmyComp.getArmy().clear();
+
+                TranslateTransition tt = new TranslateTransition(Duration.seconds(0.25), menuGame);
+                tt.setToX(menuGame.getTranslateX() + offset);
+
+                TranslateTransition tt1 = new TranslateTransition(Duration.seconds(0.5), menu0);
+                tt1.setToX(menuGame.getTranslateX());
+
+                tt.play();
+                tt1.play();
+
+                tt.setOnFinished(evt -> {
+                    getChildren().remove(menuGame);
+                });
+                return;
+            }
         });
 
         btnExitGame.setOnMouseClicked( event -> {
