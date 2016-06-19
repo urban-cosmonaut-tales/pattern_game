@@ -8,7 +8,7 @@ import Unit.Unit;
 public class CatapultaBuilder extends UnitBuilder{
     private int index;
     private final int health = 40;
-    private final int strength = 10;
+    private final int strength = 6;
     public CatapultaBuilder(Unit _unit, int _index){
         super(_unit);
         this.index = _index;

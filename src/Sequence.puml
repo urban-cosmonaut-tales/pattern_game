@@ -3,10 +3,23 @@ User -> PrimaryFrame : Button Start
 PrimaryFrame -> GameMenu
 
 GameMenu -> MyArmy : CreateArmy
-
+loop 4 times
 MyArmy-> Factory : createUnit
 MyArmy -> Director : build
-Di
+Director -> UnitBuilder : buildHealth
+Director -> UnitBuilder : buildStrength
+UnitBuilder -> Unit : setHealth
+UnitBuilder -> Unit : setStrength
+end
+GameMenu -> ComputerArmy : CreateArmy
+loop 4 times
+MyArmy-> Factory : createUnit
+MyArmy -> Director : build
+Director -> UnitBuilder : buildHealth
+Director -> UnitBuilder : buildStrength
+UnitBuilder -> Unit : setHealth
+UnitBuilder -> Unit : setStrength
+end
 
 loop MyArmy size times
 GameMenu -> MyArmy : getUnit
@@ -15,8 +28,7 @@ MyArmy -> Unit : getStrength
 MyArmy -> Unit : getColor
 end
 
-GameMenu -> ComputerArmy : CreateArmy
-loop MyArmy size times
+loop ComputerArmy size times
 GameMenu -> ComputerArmy : getUnit
 ComputerArmy -> Unit : getHealth
 ComputerArmy -> Unit : getStrength
