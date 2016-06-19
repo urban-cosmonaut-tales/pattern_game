@@ -4,7 +4,6 @@
     <list default="true" id="60760a97-17b9-46a6-8251-7450e0b4b181" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Army/ComputerArmy.java" afterPath="$PROJECT_DIR$/src/Army/ComputerArmy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sequence.puml" afterPath="$PROJECT_DIR$/src/Sequence.puml" />
     </list>
     <ignored path="pattern_game.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -91,8 +90,8 @@
       <file leaf-file-name="ComputerArmy.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Army/ComputerArmy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="101" column="153" selection-start-line="101" selection-start-column="153" selection-end-line="101" selection-end-column="153" />
+            <state relative-caret-position="750">
+              <caret line="120" column="29" selection-start-line="120" selection-start-column="29" selection-end-line="120" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1929#1935#0" expanded="true" />
@@ -742,7 +741,7 @@
       <workItem from="1466079176841" duration="2296000" />
       <workItem from="1466161747102" duration="2085000" />
       <workItem from="1466185136151" duration="3612000" />
-      <workItem from="1466367315439" duration="10124000" />
+      <workItem from="1466367315439" duration="10391000" />
     </task>
     <task id="LOCAL-00001" summary="сделана генерация армии компьютера&#10;доработыны методы атаки&#10;паттерн синглтон на армии компютера и игрока">
       <created>1465254859937</created>
@@ -891,11 +890,18 @@
       <option name="project" value="LOCAL" />
       <updated>1466374526433</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="в армии компа целитель не лечит сам себя">
+      <created>1466377916812</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1466377916812</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67513000" />
+    <option name="totallyTimeSpent" value="67780000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
@@ -953,7 +959,8 @@
     <MESSAGE value="смена состояния объекта проба" />
     <MESSAGE value="ошибка берсеркера" />
     <MESSAGE value="немного сменила цвет" />
-    <option name="LAST_COMMIT_MESSAGE" value="немного сменила цвет" />
+    <MESSAGE value="в армии компа целитель не лечит сам себя" />
+    <option name="LAST_COMMIT_MESSAGE" value="в армии компа целитель не лечит сам себя" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1443,8 +1450,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Army/ComputerArmy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="101" column="153" selection-start-line="101" selection-start-column="153" selection-end-line="101" selection-end-column="153" />
+        <state relative-caret-position="750">
+          <caret line="120" column="29" selection-start-line="120" selection-start-column="29" selection-end-line="120" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1929#1935#0" expanded="true" />

@@ -114,12 +114,13 @@ public class ComputerArmy {
                     }
                 }
         }
-
-       // System.out.println(this.army.get(soldier).toString());
-        //System.out.println("enemy");
-        /*for(Unit un : units){
+        System.out.println("computer attack : ");
+        System.out.println("soldier");
+        System.out.println(this.army.get(soldier).toString());
+        System.out.println("enemy");
+        for(Unit un : units){
             System.out.println(un.toString());
-        }*/
+        }
         this.army.get(soldier).doAction(units);
         attackingSoldier = soldier;
         for(Unit un : units){
