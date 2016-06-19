@@ -1,9 +1,6 @@
 package Unit;
 
-import PatternState.DamagedState;
-import PatternState.DeadState;
-import PatternState.HealthyState;
-import PatternState.State;
+import PatternState.*;
 import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
@@ -58,10 +55,12 @@ public abstract class Unit {
     protected void changeState(){
         //System.out.println("change " + strength);
         int percent = (100*this.health)/this.maxHealth;
-        if(percent <= 35){
-            this.state = new DeadState();
+        if(percent == 0){
+            this.state = new TrulyDeadState();
         }else if(percent <= 70 && percent >=36){
             this.state = new DamagedState();
+        }else if(percent <= 35){
+            this.state = new DeadState();
         }else {
             this.state = new HealthyState();
         }
