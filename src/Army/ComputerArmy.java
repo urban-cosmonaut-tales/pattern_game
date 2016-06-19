@@ -67,7 +67,7 @@ public class ComputerArmy {
         int enemyCount;
         Random rnd = new Random();
         ArrayList<Unit> units = new ArrayList<Unit>();
-        int pastNum = 0;
+        int pastNum = 5;
         int presentNum;
         enemyCount = rnd.nextInt(4)+1;
         for(int i = 1; i < enemyCount; i++){
@@ -94,7 +94,7 @@ public class ComputerArmy {
             int enemyCount;
             Random rnd = new Random();
             units = new ArrayList<Unit>();
-            int pastNum = 0;
+            int pastNum = 5;
             int presentNum;
             enemyCount = rnd.nextInt(4)+1;
             for(int i = 1; i < enemyCount; i++){

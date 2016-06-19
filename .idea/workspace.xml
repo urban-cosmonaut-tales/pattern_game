@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60760a97-17b9-46a6-8251-7450e0b4b181" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Sequence.puml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Army/ComputerArmy.java" afterPath="$PROJECT_DIR$/src/Army/ComputerArmy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/classesuml.puml" afterPath="$PROJECT_DIR$/src/classesuml.puml" />
     </list>
     <ignored path="pattern_game.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -93,8 +91,8 @@
       <file leaf-file-name="ComputerArmy.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Army/ComputerArmy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="72" column="24" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
+            <state relative-caret-position="261">
+              <caret line="104" column="33" selection-start-line="104" selection-start-column="33" selection-end-line="104" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1929#1935#0" expanded="true" />
@@ -767,7 +765,7 @@
       <workItem from="1466079176841" duration="2296000" />
       <workItem from="1466161747102" duration="2085000" />
       <workItem from="1466185136151" duration="3612000" />
-      <workItem from="1466367315439" duration="5016000" />
+      <workItem from="1466367315439" duration="5123000" />
     </task>
     <task id="LOCAL-00001" summary="сделана генерация армии компьютера&#10;доработыны методы атаки&#10;паттерн синглтон на армии компютера и игрока">
       <created>1465254859937</created>
@@ -881,11 +879,18 @@
       <option name="project" value="LOCAL" />
       <updated>1466371807304</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="ошибка берсеркера">
+      <created>1466372804130</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1466372804130</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62405000" />
+    <option name="totallyTimeSpent" value="62512000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
@@ -941,7 +946,8 @@
     <MESSAGE value="знать врагов и атакующего со стороны ком-па" />
     <MESSAGE value="знать врагов и атакующего со стороны ком-па в виде индексов" />
     <MESSAGE value="смена состояния объекта проба" />
-    <option name="LAST_COMMIT_MESSAGE" value="смена состояния объекта проба" />
+    <MESSAGE value="ошибка берсеркера" />
+    <option name="LAST_COMMIT_MESSAGE" value="ошибка берсеркера" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1372,8 +1378,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Army/ComputerArmy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="72" column="24" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
+        <state relative-caret-position="261">
+          <caret line="104" column="33" selection-start-line="104" selection-start-column="33" selection-end-line="104" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1929#1935#0" expanded="true" />
