@@ -5,6 +5,7 @@ import PatternFactory.*;
 import Unit.*;
 
 import javafx.scene.paint.Color;
+
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.jar.Pack200;
@@ -101,18 +102,18 @@ public class ComputerArmy {
                 presentNum = rnd.nextInt(4);
                 if(!this.army.get(presentNum).isDead() && !pastNum.contains(presentNum) && this.army.get(presentNum).getHealth() < this.army.get(presentNum).getMaxHealth() && presentNum != 2){
                     units.add(this.army.get(presentNum));
+                }else{
+                    i--;
                 }
                 pastNum.add(presentNum);
             }
         } else{
             units = new ArrayList<>();
-                while(true) {
-                    int ind = new Random().nextInt(4);
-                    if (!MyArmy.getArmy().get(ind).isDead()) {
-                        units.add(MyArmy.getArmy().get(ind));
-                        break;
-                    }
+            for(int i = 0; i < 4; i++){
+                if(!MyArmy.getArmy().get(i).isDead()) {
+                    units.add(MyArmy.getArmy().get(i));
                 }
+            }
         }
         System.out.println("computer attack : ");
         System.out.println("soldier");

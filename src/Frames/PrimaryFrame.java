@@ -39,7 +39,7 @@ public class PrimaryFrame extends Application {
         Pane root = new Pane();
         root.setPrefSize(1200,700);
 
-        InputStream is = Files.newInputStream(Paths.get("C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Game-of-Thrones-screen.jpg"));
+        InputStream is = Files.newInputStream(Paths.get("C:\\lab_pps\\pattern_game\\src\\Image\\Game-of-Thrones-screen.jpg"));
         Image img = new Image(is);
         is.close();
 

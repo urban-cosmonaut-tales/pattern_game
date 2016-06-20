@@ -72,28 +72,28 @@ public class GameMenu extends Parent {
 
         // присваиваем массивы 4 элемента и для каждого указываем путь до картинки
         Ar = new String[4];
-        Ar[0] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\arch\\icon.jpg";
-        Ar[1] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\arch\\Mirana.png";
-        Ar[2] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\arch\\templar-assassin.png";
-        Ar[3] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\arch\\windranger.png";
+        Ar[0] = "C:\\lab_pps\\pattern_game\\src\\Image\\Img\\arch\\icon.jpg";
+        Ar[1] = "C:\\lab_pps\\pattern_game\\src\\Image\\Img\\arch\\Mirana.png";
+        Ar[2] = "C:\\lab_pps\\pattern_game\\src\\Image\\Img\\arch\\templar-assassin.png";
+        Ar[3] = "C:\\lab_pps\\pattern_game\\src\\Image\\Img\\arch\\windranger.png";
 
         Hl = new String[4];
-        Hl[0] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\hil\\Disruptor.png";
-        Hl[1] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\hil\\hor_ico.png";
-        Hl[2] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\hil\\icon.jpg";
-        Hl[3] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\hil\\sky.png";
+        Hl[0] = "C:\\lab_pps\\pattern_game\\src\\Image\\Img\\hil\\Disruptor.png";
+        Hl[1] = "C:\\lab_pps\\pattern_game\\src\\Image\\Img\\hil\\hor_ico.png";
+        Hl[2] = "C:\\lab_pps\\pattern_game\\src\\Image\\Img\\hil\\icon.jpg";
+        Hl[3] = "C:\\lab_pps\\pattern_game\\src\\Image\\Img\\hil\\sky.png";
 
         Br = new String[4];
-        Br[0] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\berserker\\Bloodseeker.png";
-        Br[1] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\berserker\\hor_ico.png";
-        Br[2] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\berserker\\icon.jpg";
-        Br[3] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\berserker\\spirit_breaker_full.png";
+        Br[0] = "C:\\lab_pps\\pattern_game\\src\\Image\\Img\\berserker\\Bloodseeker.png";
+        Br[1] = "C:\\lab_pps\\pattern_game\\src\\Image\\Img\\berserker\\hor_ico.png";
+        Br[2] = "C:\\lab_pps\\pattern_game\\src\\Image\\Img\\berserker\\icon.jpg";
+        Br[3] = "C:\\lab_pps\\pattern_game\\src\\Image\\Img\\berserker\\spirit_breaker_full.png";
 
         Kp = new String[4];
-        Kp[0] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\ktp\\Gyrocopter.png";
-        Kp[1] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\ktp\\I'm Sorry pubs of the future3.png";
-        Kp[2] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\ktp\\icon (1).jpg";
-        Kp[3] = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Img\\ktp\\icon.jpg";
+        Kp[0] = "C:\\lab_pps\\pattern_game\\src\\Image\\Img\\ktp\\Gyrocopter.png";
+        Kp[1] = "C:\\lab_pps\\pattern_game\\src\\Image\\Img\\ktp\\I'm Sorry pubs of the future3.png";
+        Kp[2] = "C:\\lab_pps\\pattern_game\\src\\Image\\Img\\ktp\\icon (1).jpg";
+        Kp[3] = "C:\\lab_pps\\pattern_game\\src\\Image\\Img\\ktp\\icon.jpg";
 
         String nol = "C:\\Users\\Дарья\\IdeaProjects\\pattern_game\\pattern_game\\src\\Image\\Tantsuyut-vse.jpg";
 
